@@ -1,0 +1,312 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<recipe AppDevice="mikroSikaru.de" AppName="BrausteuerungApp" AppVersion="1.3">
+  <description>Whisky Bier
+Safale S04 Hefe
+</description>
+  <rast>
+    <Nr>0</Nr>
+    <Name>Einmaischen</Name>
+    <On>true</On>
+    <Halt>true</Halt>
+    <Call>true</Call>
+    <SollTemp>45.0</SollTemp>
+    <Time>0</Time>
+    <MinTemp>-0.1</MinTemp>
+    <MaxTemp>0.1</MaxTemp>
+    <Kp>0.0</Kp>
+    <Ki>0.0</Ki>
+    <Kd>0.0</Kd>
+    <OnTimePulse>0</OnTimePulse>
+    <OffTimePulse>0</OffTimePulse>
+    <MaxGradient>0.0</MaxGradient>
+    <Info> 20l Wasser, Rührgerät an,
+3.5kg Pilsener Malz
+0.5kg Caramalz Hell
+1,0kg WhiskyMalz (schwach getorft)
+0,5kg Cara Amber
+3,0kg Bohemian Pilsener
+langsam einruehren
+</Info>
+  </rast>
+  <rast>
+    <Nr>1</Nr>
+    <Name>Eiweissrast</Name>
+    <On>true</On>
+    <Halt>false</Halt>
+    <Call>false</Call>
+    <SollTemp>55.0</SollTemp>
+    <Time>10</Time>
+    <MinTemp>-0.1</MinTemp>
+    <MaxTemp>0.1</MaxTemp>
+    <Kp>0.0</Kp>
+    <Ki>0.0</Ki>
+    <Kd>0.0</Kd>
+    <OnTimePulse>0</OnTimePulse>
+    <OffTimePulse>0</OffTimePulse>
+    <MaxGradient>1.0</MaxGradient>
+    <Info></Info>
+  </rast>
+  <rast>
+    <Nr>2</Nr>
+    <Name>Maltoserast</Name>
+    <On>true</On>
+    <Halt>false</Halt>
+    <Call>false</Call>
+    <SollTemp>63.0</SollTemp>
+    <Time>30</Time>
+    <MinTemp>-0.1</MinTemp>
+    <MaxTemp>0.1</MaxTemp>
+    <Kp>0.0</Kp>
+    <Ki>0.0</Ki>
+    <Kd>0.0</Kd>
+    <OnTimePulse>0</OnTimePulse>
+    <OffTimePulse>0</OffTimePulse>
+    <MaxGradient>1.0</MaxGradient>
+    <Info></Info>
+  </rast>
+  <rast>
+    <Nr>3</Nr>
+    <Name>Verzuckerung</Name>
+    <On>true</On>
+    <Halt>true</Halt>
+    <Call>true</Call>
+    <SollTemp>72.0</SollTemp>
+    <Time>30</Time>
+    <MinTemp>-0.1</MinTemp>
+    <MaxTemp>0.1</MaxTemp>
+    <Kp>0.0</Kp>
+    <Ki>0.0</Ki>
+    <Kd>0.0</Kd>
+    <OnTimePulse>0</OnTimePulse>
+    <OffTimePulse>0</OffTimePulse>
+    <MaxGradient>1.0</MaxGradient>
+    <Info>Jodprobe nehmen. 
+Erst weiter schalten wenm Jodprobe ok (braun) ist.</Info>
+  </rast>
+  <rast>
+    <Nr>4</Nr>
+    <Name>Abmaischen</Name>
+    <On>true</On>
+    <Halt>false</Halt>
+    <Call>false</Call>
+    <SollTemp>78.0</SollTemp>
+    <Time>10</Time>
+    <MinTemp>-0.1</MinTemp>
+    <MaxTemp>0.1</MaxTemp>
+    <Kp>0.0</Kp>
+    <Ki>0.0</Ki>
+    <Kd>0.0</Kd>
+    <OnTimePulse>0</OnTimePulse>
+    <OffTimePulse>0</OffTimePulse>
+    <MaxGradient>1.0</MaxGradient>
+    <Info>Am Ende Rührgerät abbauen
+Mit Bierspindel Stammwürze messen
+</Info>
+  </rast>
+  <rast>
+    <Nr>5</Nr>
+    <Name>Laeuterruhe 1</Name>
+    <On>true</On>
+    <Halt>true</Halt>
+    <Call>true</Call>
+    <SollTemp>0.0</SollTemp>
+    <Time>20</Time>
+    <MinTemp>0.0</MinTemp>
+    <MaxTemp>0.0</MaxTemp>
+    <Kp>0.0</Kp>
+    <Ki>0.0</Ki>
+    <Kd>0.0</Kd>
+    <OnTimePulse>0</OnTimePulse>
+    <OffTimePulse>0</OffTimePulse>
+    <MaxGradient>0.0</MaxGradient>
+    <Info>Am Ende läutern. Erst anschwänzen.
+Nachguss bis hell. 
+Menge die kochendem Wasser (100)beigemischt wird
+um auf 78 grad zu kommen.
+Nachgussformel: V = 22 / (78-Ti)
+Ti:= Temp Wasser aus Hahn
+</Info>
+  </rast>
+  <rast>
+    <Nr>6</Nr>
+    <Name>Laeuterruhe 2</Name>
+    <On>true</On>
+    <Halt>true</Halt>
+    <Call>true</Call>
+    <SollTemp>0.0</SollTemp>
+    <Time>20</Time>
+    <MinTemp>0.0</MinTemp>
+    <MaxTemp>0.0</MaxTemp>
+    <Kp>0.0</Kp>
+    <Ki>0.0</Ki>
+    <Kd>0.0</Kd>
+    <OnTimePulse>0</OnTimePulse>
+    <OffTimePulse>0</OffTimePulse>
+    <MaxGradient>0.0</MaxGradient>
+    <Info></Info>
+  </rast>
+  <rast>
+    <Nr>7</Nr>
+    <Name>Bitterhopfen</Name>
+    <On>true</On>
+    <Halt>true</Halt>
+    <Call>true</Call>
+    <SollTemp>99.0</SollTemp>
+    <Time>5</Time>
+    <MinTemp>0.0</MinTemp>
+    <MaxTemp>1.0</MaxTemp>
+    <Kp>0.0</Kp>
+    <Ki>0.0</Ki>
+    <Kd>0.0</Kd>
+    <OnTimePulse>0</OnTimePulse>
+    <OffTimePulse>0</OffTimePulse>
+    <MaxGradient>1.0</MaxGradient>
+    <Info>Northen Brewer 10% 20g dazu geben</Info>
+  </rast>
+  <rast>
+    <Nr>8</Nr>
+    <Name>Aromahopfen</Name>
+    <On>true</On>
+    <Halt>true</Halt>
+    <Call>true</Call>
+    <SollTemp>99.0</SollTemp>
+    <Time>65</Time>
+    <MinTemp>0.0</MinTemp>
+    <MaxTemp>5.0</MaxTemp>
+    <Kp>0.0</Kp>
+    <Ki>0.0</Ki>
+    <Kd>0.0</Kd>
+    <OnTimePulse>0</OnTimePulse>
+    <OffTimePulse>0</OffTimePulse>
+    <MaxGradient>0.0</MaxGradient>
+    <Info>Willematt 5,3% 32g dazu geben</Info>
+  </rast>
+  <rast>
+    <Nr>9</Nr>
+    <Name>Nachkochen</Name>
+    <On>true</On>
+    <Halt>true</Halt>
+    <Call>true</Call>
+    <SollTemp>99.0</SollTemp>
+    <Time>5</Time>
+    <MinTemp>0.0</MinTemp>
+    <MaxTemp>5.0</MaxTemp>
+    <Kp>0.0</Kp>
+    <Ki>0.0</Ki>
+    <Kd>0.0</Kd>
+    <OnTimePulse>0</OnTimePulse>
+    <OffTimePulse>0</OffTimePulse>
+    <MaxGradient>0.0</MaxGradient>
+    <Info></Info>
+  </rast>
+  <rast>
+    <Nr>10</Nr>
+    <Name>Whirlpool</Name>
+    <On>true</On>
+    <Halt>true</Halt>
+    <Call>true</Call>
+    <SollTemp>0.0</SollTemp>
+    <Time>20</Time>
+    <MinTemp>0.0</MinTemp>
+    <MaxTemp>0.0</MaxTemp>
+    <Kp>0.0</Kp>
+    <Ki>0.0</Ki>
+    <Kd>0.0</Kd>
+    <OnTimePulse>0</OnTimePulse>
+    <OffTimePulse>0</OffTimePulse>
+    <MaxGradient>0.0</MaxGradient>
+    <Info>kräftig umrühren damit ein Strudel entsteht
+und sich der gelöste Hopfen dann in der Mitte absetzt.
+Am Ende filtern mit Sputnikfilter in Gärbottich</Info>
+  </rast>
+  <rast>
+    <Nr>11</Nr>
+    <Name>Rast12</Name>
+    <On>false</On>
+    <Halt>false</Halt>
+    <Call>false</Call>
+    <SollTemp>0.0</SollTemp>
+    <Time>0</Time>
+    <MinTemp>0.0</MinTemp>
+    <MaxTemp>0.0</MaxTemp>
+    <Kp>0.0</Kp>
+    <Ki>0.0</Ki>
+    <Kd>0.0</Kd>
+    <OnTimePulse>0</OnTimePulse>
+    <OffTimePulse>0</OffTimePulse>
+    <MaxGradient>0.0</MaxGradient>
+    <Info></Info>
+  </rast>
+  <rast>
+    <Nr>12</Nr>
+    <Name>Rast13</Name>
+    <On>false</On>
+    <Halt>false</Halt>
+    <Call>false</Call>
+    <SollTemp>0.0</SollTemp>
+    <Time>0</Time>
+    <MinTemp>0.0</MinTemp>
+    <MaxTemp>0.0</MaxTemp>
+    <Kp>0.0</Kp>
+    <Ki>0.0</Ki>
+    <Kd>0.0</Kd>
+    <OnTimePulse>0</OnTimePulse>
+    <OffTimePulse>0</OffTimePulse>
+    <MaxGradient>0.0</MaxGradient>
+    <Info></Info>
+  </rast>
+  <rast>
+    <Nr>13</Nr>
+    <Name>Rast14</Name>
+    <On>false</On>
+    <Halt>false</Halt>
+    <Call>false</Call>
+    <SollTemp>0.0</SollTemp>
+    <Time>0</Time>
+    <MinTemp>0.0</MinTemp>
+    <MaxTemp>0.0</MaxTemp>
+    <Kp>0.0</Kp>
+    <Ki>0.0</Ki>
+    <Kd>0.0</Kd>
+    <OnTimePulse>0</OnTimePulse>
+    <OffTimePulse>0</OffTimePulse>
+    <MaxGradient>0.0</MaxGradient>
+    <Info></Info>
+  </rast>
+  <rast>
+    <Nr>14</Nr>
+    <Name>Rast15</Name>
+    <On>false</On>
+    <Halt>false</Halt>
+    <Call>false</Call>
+    <SollTemp>0.0</SollTemp>
+    <Time>0</Time>
+    <MinTemp>0.0</MinTemp>
+    <MaxTemp>0.0</MaxTemp>
+    <Kp>0.0</Kp>
+    <Ki>0.0</Ki>
+    <Kd>0.0</Kd>
+    <OnTimePulse>0</OnTimePulse>
+    <OffTimePulse>0</OffTimePulse>
+    <MaxGradient>0.0</MaxGradient>
+    <Info></Info>
+  </rast>
+  <rast>
+    <Nr>15</Nr>
+    <Name>Rast16</Name>
+    <On>false</On>
+    <Halt>false</Halt>
+    <Call>false</Call>
+    <SollTemp>0.0</SollTemp>
+    <Time>0</Time>
+    <MinTemp>0.0</MinTemp>
+    <MaxTemp>0.0</MaxTemp>
+    <Kp>0.0</Kp>
+    <Ki>0.0</Ki>
+    <Kd>0.0</Kd>
+    <OnTimePulse>0</OnTimePulse>
+    <OffTimePulse>0</OffTimePulse>
+    <MaxGradient>0.0</MaxGradient>
+    <Info></Info>
+  </rast>
+</recipe>
