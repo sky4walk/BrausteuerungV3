@@ -1,7 +1,10 @@
 <?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
 <recipe AppDevice="mikroSikaru.de" AppName="BrausteuerungApp" AppVersion="1.3">
   <description>Whisky Bier
+2l Wuerze nach Kochen genommen
 Safale S04 Hefe
+3 Tage Lagern bei 20 Grad
+Jeder Flasche beim Abfuellen 50ml Wuerze hinzugegeben
 </description>
   <rast>
     <Nr>0</Nr>
