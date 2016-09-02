@@ -11,7 +11,7 @@
     <Call>true</Call>
     <SollTemp>45.0</SollTemp>
     <Time>0</Time>
-    <MinTemp>0.1</MinTemp>
+    <MinTemp>-0.1</MinTemp>
     <MaxTemp>0.1</MaxTemp>
     <Kp>0.0</Kp>
     <Ki>0.0</Ki>
@@ -29,7 +29,7 @@
     <Call>false</Call>
     <SollTemp>55.0</SollTemp>
     <Time>15</Time>
-    <MinTemp>0.1</MinTemp>
+    <MinTemp>-0.1</MinTemp>
     <MaxTemp>0.1</MaxTemp>
     <Kp>0.0</Kp>
     <Ki>0.0</Ki>

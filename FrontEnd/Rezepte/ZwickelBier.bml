@@ -20,7 +20,7 @@
     <OnTimePulse>0</OnTimePulse>
     <OffTimePulse>0</OffTimePulse>
     <MaxGradient>0.0</MaxGradient>
-    <Info>Schüttung
+    <Info>Schuettung
 1,3 kg Pilsner
 1,2 kg Wiener
 0,7 kg Weizen
@@ -35,7 +35,7 @@
     <Call>false</Call>
     <SollTemp>52.0</SollTemp>
     <Time>10</Time>
-    <MinTemp>0.1</MinTemp>
+    <MinTemp>-0.1</MinTemp>
     <MaxTemp>0.1</MaxTemp>
     <Kp>0.0</Kp>
     <Ki>0.0</Ki>
@@ -97,7 +97,7 @@
     <OnTimePulse>0</OnTimePulse>
     <OffTimePulse>0</OffTimePulse>
     <MaxGradient>1.0</MaxGradient>
-    <Info>Würze messen mit Bierspindel</Info>
+    <Info>Wuerze messen mit Bierspindel</Info>
   </rast>
   <rast>
     <Nr>5</Nr>
@@ -115,7 +115,7 @@
     <OnTimePulse>0</OnTimePulse>
     <OffTimePulse>0</OffTimePulse>
     <MaxGradient>0.0</MaxGradient>
-    <Info>Anschwänzen: ersten Liter wieder zugeben; 2l Wasser vorgelegt im Laeuterbottich; 8l Nachguss</Info>
+    <Info>Anschwaenzen: ersten Liter wieder zugeben; 2l Wasser vorgelegt im Laeuterbottich; 8l Nachguss</Info>
   </rast>
   <rast>
     <Nr>6</Nr>
@@ -209,7 +209,7 @@
     2l Speise entnehmen, Speise und Wuerze
     abkuehlen lassen und dann 11g Hefe 
     Safale S-23 bei 12°C anstellen
-    von der Speise Stammwürze messen und nach Ende der Gaerung.
+    von der Speise Stammwuerze messen und nach Ende der Gaerung.
     </Info>
   </rast>
   <rast>
