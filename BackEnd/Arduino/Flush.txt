@@ -1,0 +1,15 @@
+Install USB Arduino Driver:
+---------------------------
+- Run CH341SER\Setup.exe
+- Press install
+- connect Arduino Board with USB
+- wait until hardware is installed (this could take some minutes)
+
+Flush Arduino Board:
+--------------------
+- press <Windows>+R and put in "cmd" and press <OK>
+- go to directory "avrdude"
+- start listComPorts.exe
+- in the ouput there is the com port where the arduino is. 
+- set the com port in the file installFW.bat/installFW.sh in line SET COMPORT=<com port>
+- call skript installFW.bat/installFW.sh
