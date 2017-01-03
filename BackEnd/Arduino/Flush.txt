@@ -1,11 +1,8 @@
 Install USB Arduino Driver:
 ---------------------------
-- einen der unteren Treiber auswählen ( je nach Chipsatz )
-	- FTDI Chipsatz: 
-		- http://www.ftdichip.com/Drivers/VCP.htm 	
-	- CH341SER Chipsatz: 
-		- http://www.wch.cn/download/CH341SER_EXE.html	
-		- Run CH341SER\Setup.exe
+- Download Driver CH341SER http://www.wch.cn/download/CH341SER_EXE.html	
+- Run CH341SER\Setup.exe
+( es kann bei einigen Modelle auh der Treiber seinFTDI Chipsatz: http://www.ftdichip.com/Drivers/VCP.htm )
 - Press install
 - connect Arduino Board with USB
 - wait until hardware is installed (this could take some minutes)
