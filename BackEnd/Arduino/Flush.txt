@@ -9,9 +9,7 @@ Install USB Arduino Driver:
 
 Download FW
 -----------
-- go to https://github.com/sky4walk/BrausteuerungV3
-- Press "Clone or Download"
-- choose Download ZIP
+- Download https://github.com/sky4walk/BrausteuerungV3/archive/master.zip
 - extract ZIP File BrausteuerungV3-master.zip
 
 Flush Arduino Board:
