@@ -1,0 +1,101 @@
+<RECIPES>
+  <RECIPE>
+    <VERSION>1</VERSION>
+    <NAME>MeinNeuesBier</NAME>
+    <TYPE>All Grain</TYPE>
+    <BREWER>Unbekannt</BREWER>
+    <BATCH_SIZE>20</BATCH_SIZE>
+    <BOIL_TIME>90</BOIL_TIME>
+    <EFFICIENCY>59.9</EFFICIENCY>
+    <HOPS>
+      <HOP>
+        <VERSION>1</VERSION>
+        <NAME>Perle</NAME>
+        <ALPHA>6</ALPHA>
+        <AMOUNT>0.03226</AMOUNT>
+        <USE>First Wort</USE>
+        <TIME>80</TIME>
+        <FORM>Pellet</FORM>
+      </HOP>
+      <HOP>
+        <VERSION>1</VERSION>
+        <NAME>Tettnanger</NAME>
+        <ALPHA>4</ALPHA>
+        <AMOUNT>0.02063</AMOUNT>
+        <USE>Boil</USE>
+        <TIME>10</TIME>
+        <FORM>Pellet</FORM>
+      </HOP>
+    </HOPS>
+    <FERMENTABLES>
+      <FERMENTABLE>
+        <VERSION>1</VERSION>
+        <NAME>Münchner Malz II</NAME>
+        <TYPE>Grain</TYPE>
+        <AMOUNT>2.466</AMOUNT>
+        <YIELD>80</YIELD>
+        <COLOR>9.18648</COLOR>
+      </FERMENTABLE>
+      <FERMENTABLE>
+        <VERSION>1</VERSION>
+        <NAME>Wiener Malz </NAME>
+        <TYPE>Grain</TYPE>
+        <AMOUNT>2.466</AMOUNT>
+        <YIELD>80</YIELD>
+        <COLOR>3.5612</COLOR>
+      </FERMENTABLE>
+    </FERMENTABLES>
+    <YEASTS>
+      <YEAST>
+        <VERSION>1</VERSION>
+        <NAME>Fermentis SAFLAGER S-23</NAME>
+        <TYPE>Lager</TYPE>
+        <FORM>Dry</FORM>
+        <AMOUNT>0</AMOUNT>
+      </YEAST>
+    </YEASTS>
+    <MISCS/>
+    <MASH>
+      <VERSION>1</VERSION>
+      <NAME>Temperatur</NAME>
+      <GRAIN_TEMP>20</GRAIN_TEMP>
+      <MASH_STEPS>
+        <MASH_STEP>
+          <VERSION>1</VERSION>
+          <NAME>Einmaischen</NAME>
+          <TYPE>Temperature</TYPE>
+          <STEP_TEMP>57</STEP_TEMP>
+          <STEP_TIME>0</STEP_TIME>
+        </MASH_STEP>
+        <MASH_STEP>
+          <VERSION>1</VERSION>
+          <NAME>Eiweißrast (57°)</NAME>
+          <TYPE>Temperature</TYPE>
+          <STEP_TEMP>57</STEP_TEMP>
+          <STEP_TIME>10</STEP_TIME>
+        </MASH_STEP>
+        <MASH_STEP>
+          <VERSION>1</VERSION>
+          <NAME>Maltoserast (60°-65°)</NAME>
+          <TYPE>Temperature</TYPE>
+          <STEP_TEMP>63</STEP_TEMP>
+          <STEP_TIME>35</STEP_TIME>
+        </MASH_STEP>
+        <MASH_STEP>
+          <VERSION>1</VERSION>
+          <NAME>Verzuckerung (70°-75°)</NAME>
+          <TYPE>Temperature</TYPE>
+          <STEP_TEMP>72</STEP_TEMP>
+          <STEP_TIME>20</STEP_TIME>
+        </MASH_STEP>
+        <MASH_STEP>
+          <VERSION>1</VERSION>
+          <NAME>Abmaischen (78°)</NAME>
+          <TYPE>Temperature</TYPE>
+          <STEP_TEMP>78</STEP_TEMP>
+          <STEP_TIME>0</STEP_TIME>
+        </MASH_STEP>
+      </MASH_STEPS>
+    </MASH>
+  </RECIPE>
+</RECIPES>
