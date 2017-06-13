@@ -1,0 +1,10 @@
+(fp_lib_table
+  (lib (name arduino)(type Legacy)(uri "$(KIPRJMOD)\\arduino.mod")(options "")(descr ""))
+  (lib (name HC-06)(type KiCad)(uri "$(KIPRJMOD)\\HC-06.pretty")(options "")(descr ""))
+  (lib (name KHTaster)(type KiCad)(uri "$(KIPRJMOD)\\KHTaster.pretty")(options "")(descr ""))
+  (lib (name PIEZZO)(type KiCad)(uri "$(KIPRJMOD)\\PIEZZO.pretty")(options "")(descr ""))
+  (lib (name Transmitter433MHz)(type KiCad)(uri "$(KIPRJMOD)\\Transmitter433MHz.pretty")(options "")(descr ""))
+  (lib (name DS18B20)(type KiCad)(uri "$(KIPRJMOD)\\DS18B20.pretty")(options "")(descr ""))
+  (lib (name Switch_DPST)(type KiCad)(uri "$(KIPRJMOD)\\Switch_DPST.pretty")(options "")(descr ""))
+  (lib (name myPiezzo)(type KiCad)(uri "$(KIPRJMOD)\\myPiezzo.pretty")(options "")(descr ""))
+)

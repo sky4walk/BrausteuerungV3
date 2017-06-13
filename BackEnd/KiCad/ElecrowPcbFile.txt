@@ -1,0 +1,8 @@
+Top layer: 					pcbname.GTL	->	BrausteuerungV3-F.Cu.gtl
+Bottom layer: 				pcbname.GBL	->	BrausteuerungV3-B.Cu.gbl
+Solder Stop Mask top: 		pcbname.GTS	->	BrausteuerungV3-F.Mask.gts
+Solder Stop Mask Bottom: 	pcbname.GBS	->	BrausteuerungV3-B.Mask.gbs
+Silk Top: 					pcbname.GTO	->	BrausteuerungV3-F.SilkS.gto
+Silk Bottom: 				pcbname.GBO	->	BrausteuerungV3-B.SilkS.gbo
+NC Drill: 					pcbname.TXT	->	BrausteuerungV3.drl
+Mechanical layer : 			pcbname.GML	->	BrausteuerungV3-Edge.Cuts.gm1

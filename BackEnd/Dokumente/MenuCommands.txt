@@ -1,0 +1,70 @@
+A|T
+N
+I
+G
+Q
+S
+H
+B
+D
+W
+K
+
+menu:
+m[a|d]16:160102
+
+Settings
+//spi:  - pid
+//stz:	- ntc T0
+skm:	- kalibrier M
+//srz:	- ntc R0
+skt:	- kalibrier T
+//sto:	- ntc T1
+//sro:	- ntc R1
+//svw:  - VorWiderstand
+//sps:  - window size
+//spt:  - sample time
+//spd:  - delta
+//sts:  - auto tune
+//stn:  - auto tune
+//slb:  - auto tune
+sst:	- switch type ( default 0 )
+ssr:
+ssp:
+ssb:	- switch bits
+ssa:
+ssu:
+sbl:
+spw:
+snr:	- serial number
+sls:    - load state
+sht:	- measure heating time
+soh:	- over heat
+
+
+
+steps
+bnr:
+bon:
+bha:
+bbc:
+bst:
+btd:
+bit:
+bat:
+bkp:
+//bki:
+//bkd:
+bpn:
+bpf:
+bmg:  - max gradient
+
+run
+rnr:							
+r000000 N0000 I00000 S00000 F00000 C00000 H0000 B0000 [L] [R00000] [O00000] [W] [K] 
+
+tune:
+tnr:
+t000000 N0000 I00000 S00000 F00000 C00000 H0000 B0000 [L] [R00000] [O00000] [W] [K] 
+
+

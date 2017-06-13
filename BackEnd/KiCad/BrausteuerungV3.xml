@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="D">
+  <design>
+    <source>C:/andre/daten/develop/BrausteuerungV3/BackEnd/KiCad/BrausteuerungV3/BrausteuerungV3.sch</source>
+    <date>31.07.2016 17:04:32</date>
+    <tool>Eeschema 4.0.2-stable</tool>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title>BrausteuerungV3</title>
+        <company>mikroSikaru</company>
+        <rev/>
+        <date/>
+        <source>BrausteuerungV3.sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="R4">
+      <value>4,7K</value>
+      <footprint>Resistors_ThroughHole:Resistor_Horizontal_RM10mm</footprint>
+      <libsource lib="device" part="R"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5788D6A3</tstamp>
+    </comp>
+    <comp ref="R3">
+      <value>330</value>
+      <footprint>Resistors_ThroughHole:Resistor_Horizontal_RM10mm</footprint>
+      <libsource lib="device" part="R"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5788D779</tstamp>
+    </comp>
+    <comp ref="R1">
+      <value>100K</value>
+      <footprint>Resistors_ThroughHole:Resistor_Horizontal_RM10mm</footprint>
+      <libsource lib="device" part="R"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5788D7F7</tstamp>
+    </comp>
+    <comp ref="R2">
+      <value>100K</value>
+      <footprint>Resistors_ThroughHole:Resistor_Horizontal_RM10mm</footprint>
+      <libsource lib="device" part="R"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5788D863</tstamp>
+    </comp>
+    <comp ref="D1">
+      <value>LED</value>
+      <footprint>LEDs:LED-3MM</footprint>
+      <libsource lib="device" part="LED"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5788DA4B</tstamp>
+    </comp>
+    <comp ref="IC1">
+      <value>DS18B20</value>
+      <footprint>DS18B20:DS18B20</footprint>
+      <libsource lib="DS1820" part="DS18B20"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5788DF8B</tstamp>
+    </comp>
+    <comp ref="U1">
+      <value>arduino_mini</value>
+      <footprint>arduino:arduino_mini</footprint>
+      <libsource lib="arduino" part="arduino_mini"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5788E7B1</tstamp>
+    </comp>
+    <comp ref="J2">
+      <value>Transmitter433MHz</value>
+      <footprint>Transmitter433MHz:Transmitter433MHz</footprint>
+      <libsource lib="BrausteuerungV3-rescue" part="Transmitter433MHz-RESCUE-BrausteuerungV3"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>578A305F</tstamp>
+    </comp>
+    <comp ref="J3">
+      <value>HC-06</value>
+      <footprint>HC-06:HC-06</footprint>
+      <libsource lib="hc-06" part="HC-06"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>578A34FC</tstamp>
+    </comp>
+    <comp ref="J1">
+      <value>KHTaster</value>
+      <footprint>KHTaster:KHTaster</footprint>
+      <libsource lib="khtaster" part="KHTaster"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>578A6220</tstamp>
+    </comp>
+    <comp ref="J4">
+      <value>myPiezzo</value>
+      <footprint>myPiezzo:PIEZZO</footprint>
+      <libsource lib="myPiezzo" part="myPiezzo"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>579E0D29</tstamp>
+    </comp>
+    <comp ref="P1">
+      <value>CONN_01X02</value>
+      <footprint>Connect:GS2</footprint>
+      <libsource lib="conn" part="CONN_01X02"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>579E1182</tstamp>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="conn" part="CONN_01X02">
+      <description>Connector 01x02</description>
+      <footprints>
+        <fp>Pin_Header_Straight_1X02</fp>
+        <fp>Pin_Header_Angled_1X02</fp>
+        <fp>Socket_Strip_Straight_1X02</fp>
+        <fp>Socket_Strip_Angled_1X02</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">P</field>
+        <field name="Value">CONN_01X02</field>
+      </fields>
+      <pins>
+        <pin num="1" name="P1" type="passive"/>
+        <pin num="2" name="P2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="DS1820" part="DS1820">
+      <aliases>
+        <alias>DS18B20</alias>
+      </aliases>
+      <fields>
+        <field name="Reference">IC</field>
+        <field name="Value">DS1820</field>
+      </fields>
+      <pins>
+        <pin num="1" name="GND" type="power_in"/>
+        <pin num="2" name="DQ" type="power_in"/>
+        <pin num="3" name="Vdd" type="power_in"/>
+      </pins>
+    </libpart>
+    <libpart lib="hc-06" part="HC-06">
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">HC-06</field>
+      </fields>
+      <pins>
+        <pin num="1" name="VCC" type="passive"/>
+        <pin num="2" name="GND" type="passive"/>
+        <pin num="3" name="TXD" type="passive"/>
+        <pin num="4" name="RXD" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="khtaster" part="KHTaster">
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">KHTaster</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="input"/>
+        <pin num="2" name="2" type="passive"/>
+        <pin num="3" name="3" type="passive"/>
+        <pin num="4" name="4" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="device" part="LED">
+      <footprints>
+        <fp>LED-3MM</fp>
+        <fp>LED-5MM</fp>
+        <fp>LED-10MM</fp>
+        <fp>LED-0603</fp>
+        <fp>LED-0805</fp>
+        <fp>LED-1206</fp>
+        <fp>LEDV</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">LED</field>
+      </fields>
+      <pins>
+        <pin num="1" name="K" type="passive"/>
+        <pin num="2" name="A" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="device" part="R">
+      <description>Resistor</description>
+      <footprints>
+        <fp>R_*</fp>
+        <fp>Resistor_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">R</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~" type="passive"/>
+        <pin num="2" name="~" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="BrausteuerungV3-rescue" part="Transmitter433MHz-RESCUE-BrausteuerungV3">
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Transmitter433MHz-RESCUE-BrausteuerungV3</field>
+      </fields>
+      <pins>
+        <pin num="1" name="DATA" type="passive"/>
+        <pin num="2" name="VCC" type="passive"/>
+        <pin num="3" name="GND" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="arduino" part="arduino_mini">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">arduino_mini</field>
+        <field name="Footprint">DIL20</field>
+      </fields>
+      <pins>
+        <pin num="1" name="(led)(SCK)D13" type="input"/>
+        <pin num="2" name="3V3" type="power_out"/>
+        <pin num="3" name="Aref" type="input"/>
+        <pin num="4" name="A0" type="BiDi"/>
+        <pin num="5" name="A1" type="BiDi"/>
+        <pin num="6" name="A2" type="BiDi"/>
+        <pin num="7" name="A3" type="BiDi"/>
+        <pin num="8" name="A4(SDA)" type="BiDi"/>
+        <pin num="9" name="A5(SCL)" type="BiDi"/>
+        <pin num="10" name="A6" type="BiDi"/>
+        <pin num="11" name="A7" type="BiDi"/>
+        <pin num="12" name="5V" type="power_out"/>
+        <pin num="13" name="RST" type="input"/>
+        <pin num="14" name="GND" type="power_in"/>
+        <pin num="15" name="Vin" type="power_in"/>
+        <pin num="16" name="(TX)D0" type="BiDi"/>
+        <pin num="17" name="(RX)D1" type="BiDi"/>
+        <pin num="18" name="RST" type="input"/>
+        <pin num="19" name="GND" type="power_in"/>
+        <pin num="20" name="(int2)D2" type="BiDi"/>
+        <pin num="21" name="(int3)#D3" type="BiDi"/>
+        <pin num="22" name="D4" type="BiDi"/>
+        <pin num="23" name="#D5" type="BiDi"/>
+        <pin num="24" name="#D6" type="BiDi"/>
+        <pin num="25" name="D7" type="BiDi"/>
+        <pin num="26" name="D8" type="BiDi"/>
+        <pin num="27" name="#D9" type="BiDi"/>
+        <pin num="28" name="(SS)#D10" type="BiDi"/>
+        <pin num="29" name="(MOSI)#D11" type="BiDi"/>
+        <pin num="30" name="(MISO)D12" type="BiDi"/>
+      </pins>
+    </libpart>
+    <libpart lib="myPiezzo" part="myPiezzo">
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">myPiezzo</field>
+      </fields>
+      <pins>
+        <pin num="1" name="+" type="input"/>
+        <pin num="2" name="-" type="input"/>
+      </pins>
+    </libpart>
+  </libparts>
+  <libraries>
+    <library logical="myPiezzo">
+      <uri>C:\andre\daten\develop\BrausteuerungV3\BackEnd\KiCad\BrausteuerungV3\myPiezzo.lib</uri>
+    </library>
+    <library logical="hc-06">
+      <uri>C:\andre\daten\develop\BrausteuerungV3\BackEnd\KiCad\BrausteuerungV3\hc-06.lib</uri>
+    </library>
+    <library logical="khtaster">
+      <uri>C:\andre\daten\develop\BrausteuerungV3\BackEnd\KiCad\BrausteuerungV3\khtaster.lib</uri>
+    </library>
+    <library logical="DS1820">
+      <uri>C:\andre\daten\develop\BrausteuerungV3\BackEnd\KiCad\BrausteuerungV3\DS1820.lib</uri>
+    </library>
+    <library logical="BrausteuerungV3-rescue">
+      <uri>C:\andre\daten\develop\BrausteuerungV3\BackEnd\KiCad\BrausteuerungV3\BrausteuerungV3-rescue.lib</uri>
+    </library>
+    <library logical="device">
+      <uri>C:\Program Files\KiCad\share\kicad\library\device.lib</uri>
+    </library>
+    <library logical="arduino">
+      <uri>C:\andre\daten\develop\BrausteuerungV3\BackEnd\KiCad\BrausteuerungV3\arduino.lib</uri>
+    </library>
+    <library logical="conn">
+      <uri>C:\Program Files\KiCad\share\kicad\library\conn.lib</uri>
+    </library>
+  </libraries>
+  <nets>
+    <net code="1" name="Net-(IC1-Pad2)">
+      <node ref="R4" pin="2"/>
+      <node ref="IC1" pin="2"/>
+      <node ref="U1" pin="30"/>
+    </net>
+    <net code="2" name="Net-(R1-Pad1)">
+      <node ref="R2" pin="2"/>
+      <node ref="R1" pin="1"/>
+      <node ref="U1" pin="4"/>
+    </net>
+    <net code="3" name="Net-(D1-Pad2)">
+      <node ref="D1" pin="2"/>
+      <node ref="R3" pin="2"/>
+    </net>
+    <net code="4" name="Net-(J3-Pad4)">
+      <node ref="J3" pin="4"/>
+      <node ref="U1" pin="29"/>
+    </net>
+    <net code="5" name="Net-(J1-Pad1)">
+      <node ref="U1" pin="20"/>
+      <node ref="J1" pin="1"/>
+    </net>
+    <net code="6" name="Net-(J2-Pad1)">
+      <node ref="J2" pin="1"/>
+      <node ref="U1" pin="26"/>
+    </net>
+    <net code="7" name="Net-(J4-Pad1)">
+      <node ref="U1" pin="27"/>
+      <node ref="J4" pin="1"/>
+    </net>
+    <net code="8" name="Net-(J3-Pad3)">
+      <node ref="J3" pin="3"/>
+      <node ref="U1" pin="28"/>
+    </net>
+    <net code="9" name="Net-(IC1-Pad3)">
+      <node ref="J3" pin="1"/>
+      <node ref="U1" pin="12"/>
+      <node ref="IC1" pin="3"/>
+      <node ref="R4" pin="1"/>
+      <node ref="J2" pin="2"/>
+      <node ref="R3" pin="1"/>
+    </net>
+    <net code="10" name="Net-(U1-Pad7)">
+      <node ref="U1" pin="7"/>
+    </net>
+    <net code="11" name="Net-(U1-Pad1)">
+      <node ref="U1" pin="1"/>
+    </net>
+    <net code="12" name="Net-(U1-Pad2)">
+      <node ref="U1" pin="2"/>
+    </net>
+    <net code="13" name="Net-(U1-Pad3)">
+      <node ref="U1" pin="3"/>
+    </net>
+    <net code="14" name="Net-(U1-Pad5)">
+      <node ref="U1" pin="5"/>
+    </net>
+    <net code="15" name="Net-(U1-Pad6)">
+      <node ref="U1" pin="6"/>
+    </net>
+    <net code="16" name="+9V">
+      <node ref="R2" pin="1"/>
+      <node ref="P1" pin="2"/>
+      <node ref="U1" pin="15"/>
+    </net>
+    <net code="17" name="Net-(U1-Pad8)">
+      <node ref="U1" pin="8"/>
+    </net>
+    <net code="18" name="Net-(U1-Pad9)">
+      <node ref="U1" pin="9"/>
+    </net>
+    <net code="19" name="Net-(U1-Pad10)">
+      <node ref="U1" pin="10"/>
+    </net>
+    <net code="20" name="Net-(U1-Pad11)">
+      <node ref="U1" pin="11"/>
+    </net>
+    <net code="21" name="Net-(U1-Pad21)">
+      <node ref="U1" pin="21"/>
+    </net>
+    <net code="22" name="GNDREF">
+      <node ref="J2" pin="3"/>
+      <node ref="J3" pin="2"/>
+      <node ref="J1" pin="2"/>
+      <node ref="J4" pin="2"/>
+      <node ref="U1" pin="14"/>
+      <node ref="P1" pin="1"/>
+      <node ref="R1" pin="2"/>
+      <node ref="D1" pin="1"/>
+      <node ref="IC1" pin="1"/>
+    </net>
+    <net code="23" name="Net-(J1-Pad4)">
+      <node ref="J1" pin="4"/>
+    </net>
+    <net code="24" name="Net-(J1-Pad3)">
+      <node ref="J1" pin="3"/>
+    </net>
+    <net code="25" name="GND">
+      <node ref="U1" pin="19"/>
+    </net>
+    <net code="26" name="Net-(U1-Pad18)">
+      <node ref="U1" pin="18"/>
+    </net>
+    <net code="27" name="Net-(U1-Pad17)">
+      <node ref="U1" pin="17"/>
+    </net>
+    <net code="28" name="Net-(U1-Pad16)">
+      <node ref="U1" pin="16"/>
+    </net>
+    <net code="29" name="Net-(U1-Pad25)">
+      <node ref="U1" pin="25"/>
+    </net>
+    <net code="30" name="Net-(U1-Pad24)">
+      <node ref="U1" pin="24"/>
+    </net>
+    <net code="31" name="Net-(U1-Pad23)">
+      <node ref="U1" pin="23"/>
+    </net>
+    <net code="32" name="Net-(U1-Pad13)">
+      <node ref="U1" pin="13"/>
+    </net>
+    <net code="33" name="Net-(U1-Pad22)">
+      <node ref="U1" pin="22"/>
+    </net>
+  </nets>
+</export>
