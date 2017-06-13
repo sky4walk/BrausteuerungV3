@@ -1,0 +1,2 @@
+aufs handy uebertragen:
+d:\portabelApps\Android\sdk\platform-tools\adb install D:\download\BrausteuerungV3\FrontEnd\Android\BrausteuerungApp\app\app-release.apk

@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="de.mikrosikaru.brausteuerungapp.RunActivity"
+    tools:showIn="@layout/activity_run">
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/run_spinner"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_run_str_start"
+        android:id="@+id/btn_run_id_start"
+        android:layout_below="@+id/run_spinner"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignRight="@+id/run_spinner"
+        android:layout_alignEnd="@+id/run_spinner" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_run_str_weiter"
+        android:id="@+id/btn_run_weiter"
+        android:layout_below="@+id/btn_run_id_start"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/btn_run_id_start"
+        android:layout_alignEnd="@+id/btn_run_id_start" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_run_str_mute"
+        android:id="@+id/btn_run_call_stop"
+        android:layout_below="@+id/btn_run_weiter"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignRight="@+id/btn_run_weiter"
+        android:layout_alignEnd="@+id/btn_run_weiter" />
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/txt_run_str_IstTmp"
+        android:id="@+id/run_id_temp_ist_txt"
+        android:layout_below="@+id/btn_run_call_stop"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text=""
+        android:id="@+id/run_id_temp_ist_out"
+        android:layout_below="@+id/btn_run_call_stop"
+        android:layout_alignRight="@+id/btn_run_call_stop"
+        android:layout_alignEnd="@+id/btn_run_call_stop" />
+
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/txt_run_str_SollTmp"
+        android:id="@+id/run_id_temp_soll_txt"
+        android:layout_below="@+id/run_id_temp_ist_txt"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text=""
+        android:id="@+id/run_id_temp_soll_out"
+        android:layout_below="@+id/run_id_temp_ist_out"
+        android:layout_alignRight="@+id/btn_run_call_stop"
+        android:layout_alignEnd="@+id/btn_run_call_stop" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/txt_run_str_Gradient"
+        android:id="@+id/run_id_gradient_txt"
+        android:layout_below="@+id/run_id_temp_soll_txt"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text=""
+        android:id="@+id/run_id_gradient_out"
+        android:layout_below="@+id/run_id_temp_soll_out"
+        android:layout_alignRight="@+id/btn_run_call_stop"
+        android:layout_alignEnd="@+id/btn_run_call_stop" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/txt_run_str_HeaterState"
+        android:id="@+id/run_id_heaterstate_txt"
+        android:layout_below="@+id/run_id_gradient_txt"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text=""
+        android:id="@+id/run_id_heaterstate_out"
+        android:layout_below="@+id/run_id_gradient_out"
+        android:layout_alignRight="@+id/btn_run_call_stop"
+        android:layout_alignEnd="@+id/btn_run_call_stop" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/run_str_time"
+        android:id="@+id/run_id_time_txt"
+        android:layout_below="@+id/run_id_heaterstate_txt"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text=""
+        android:id="@+id/run_id_time_out"
+        android:layout_below="@+id/run_id_heaterstate_out"
+        android:layout_alignRight="@+id/btn_run_call_stop"
+        android:layout_alignEnd="@+id/btn_run_call_stop" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/txt_run_str_Status"
+        android:id="@+id/run_id_status_txt"
+        android:layout_below="@+id/run_id_time_out"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text=""
+        android:id="@+id/run_id_status_out"
+        android:layout_below="@+id/run_id_time_out"
+        android:layout_alignRight="@+id/btn_run_call_stop"
+        android:layout_alignEnd="@+id/btn_run_call_stop" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/txt_run_str_Battery"
+        android:id="@+id/run_id_battery_txt"
+        android:layout_below="@+id/run_id_status_txt"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text=""
+        android:id="@+id/run_id_battery_out"
+        android:layout_below="@+id/run_id_status_out"
+        android:layout_alignRight="@+id/btn_run_call_stop"
+        android:layout_alignEnd="@+id/btn_run_call_stop" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/txt_run_str_Infos"
+        android:id="@+id/run_id_info_txt"
+        android:layout_below="@+id/run_id_battery_txt"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text=""
+        android:id="@+id/run_id_info_out"
+        android:layout_below="@+id/run_id_info_txt"
+        android:layout_alignRight="@+id/btn_run_call_stop"
+        android:layout_alignEnd="@+id/btn_run_call_stop" />
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/run_str_back"
+        android:id="@+id/run_btn_back"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/btn_run_weiter"
+        android:layout_alignEnd="@+id/btn_run_weiter"
+        />
+
+
+</RelativeLayout>
