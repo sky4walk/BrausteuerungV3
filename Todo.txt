@@ -1,0 +1,112 @@
+Todo und Feature Liste
+
+Features:
+- Bluetooth Verbindung zum Android-Mobilteil ab Android 2.2
+- Funsteckdose bis 3600W schaltbar
+- Rezept kann erstellt, gespeichert und geladen werden
+- bis zu 16 Rasten (Maischen/ Hopfengaben wahlweise)
+- loggen aller Daten vom Brauen in csv Datei
+- jede Rast kann einen Brauruf sowohl Mobilgerät als auch Steuergerät
+- jede Rast kann am Ende auf weiter warten
+- Zweipunktregler mit optionaler PWD und Gradientenrückkoppelung
+- alternative PID Regelung
+- nach Stromverlust startet ab letztem Brauschritt
+- Steuerung arbeitet autark von der Mobilanwendung, d.h. nach Bluetooth Verbindungsabruch wird weiter gearbeitet
+- offenes Protokoll für eigene Anwendungen möglich
+- ByPass Modus der Steuerung
+- schreibt zuerst auf extSdCard verzeichnis
+- gradienten einstellung
+- Unterstützt KleinerBrauhelfer Exportdatei Version 9
+- merkt sich Brausteuerungsabhängig das Braurezept, um beim Wiederverbinden das Rezept zu laden
+- gemessener Verbrauch während des Brauens ca 50mA
+- kann auch kühlen wenn min > max
+- http server 
+Todo:
+* Icon erstellen
+* CheckState im MainMenu
+* Loggen des Brauens
+* ins Bierrezept noch Version und SerNr ausgeben
+* Version und SerNr ins Log
+* Version und SerNr anzeigen im MainMenu
+* im Menu noch SerNr angeben
+* wenn Rast an ist dann andere Farbe wählen
+* nach neu start der App schauen, ob erkannt wird und richtiger zstand gewählt wird
+* Farben schöner wählen
+* status textfield
+* bat low anzeigen
+* Arduino stop in Steuerung einfügen die den timer anhält
+* laden von Kleiner Brauhelfer Datei
+* nach brauvorgang wieder daten von steuerung auslesen
+- Android stop in Steuerung einfügen die den timer anhält
+* vorbereiten für Google Play store
+* Prototypen bauen
+* Aufbauanleitung erstellen
+* Anleitung erstellen
+* Werbung Hobbybrauer und Webseite stellen
+* min max checken dass min < max ist
+- main knoepfe beim verbinden ausgrauen
+* testen an anlage
+* prototypen für tester bauen
+* jeder Brauschritt soll auch ein textfeld bekommen das auch beim brauen angezeigt wird wegen der info halber was zu tun ist
+* Alarm am Handy bei Brauruf
+* CSV Dateiformat für logdatei
+- reconnect bei BT verlust (nicht umgesetzt weil die steuerung so stabil ist)
+24.5.16
+- BT Scannen findet das erste Mal nicht die Steuerung, muss nochmal gestartet werden die SW
+* BrauAnzeige grösser oder besser umgebaut werden->Schrift am Mobilgerät grösser stellen
+* kleiner Brauhelfer geht anscheinend nicht->geht getestet, muss nur reinkopiert werden
+* erste Spalte ; zeichen entfernen
+* Webserver einbauen
+* load state abgeschaltet und kann aber wieder reinkonfiguriert werden
+* APP PID P-Wert als Hystere Rueckkopllungswert verwenden. Abhaengig von FW Version 
+* BT PW nur gespeichert zum Modul wenn geaendert
+* Widerstand spannungsteiler auf 150 50 geaendert
+* batterie status anzeige beim brauen
+* anzeige pb heizung an ist
+* brauprogramm mit alarm temperaturüberschreitung
+* BeerXML ergänzen
+* deaktivierung rasten während des brauens
+* bug mit xml notepad 2007 beim senden
+* PID entfernt
+* Brennstuhl 433 Steckdose integriert
+- automatisches Abspeichern von Settings nach Sendung an Steuerung
+* übertragenes Rezept erst speichern wenn richtig übertragen 
+- Alarmmeldungen ausgeben Q 0-2
+- Settings Überkochen und Koschschutz einstellbar
+- testen neue App mit alter Firmware
+- Arendo/Brennenstuhl Steckdose weitere Kanäle auslesen (RCSwitch)
+* SmartWares Steckdose weitere Settings auslesen (NewRemote/RFControl)
+- Mumbi Funksteckdose weitere Kanäle auslesen (RFControl)
+- Funksteckdosen Settings ins Handbuch übertragen mit Kapitel einlernen
+
+bugs:
+* bei BT verlust während brauens muss App neu gestartet werden-> umbau des BT und 433Modules
+* vor dem laden von xsud files sollen alle rasten gecleart werden
+* IP erst anzeigen wenn WLan vorhanden ist. wenn vorhanden dann server starten
+* Anleitung verbessern: Brausteuerung Feuerfeste unterlage und brauanlage / Heizplatte auch; keine Akkus verwenden kein Netzgerät anschließen
+* Anstatt SerienNr sollte MAC Adresse angezeigt werden
+* nochmal RCSwitch alternative testen wegen Brenennstuhl Steckdose
+* min:sek format beim brauen anzeigen
+* pfad gleich beim start anlegen
+* xsud rasten abhaengig von ihrer nummer einordnen
+* xsud hopfengaben zeit berechnen
+* GUI testen mit Samsung S2
+* GUI eingabezeile etwas kleiner
+* Firmware: kalibrierung der temperaturwerte nicht vorhanden. neue FW version 300630
+* EInstellungen nach zurück nicht reseted
+- beim DRehen der Rast mit aufgeklappter fragment bleibt zustand komisch, kann ncihtmehr eingeklappt werden
+* BT kein device gefunden drückt man auf das symbol stuerzt SW ab
+* Android 6: Wo liegen die daten auf dem Telefon
+
+platine:
+* piezzo falsch dimensioniert
+* platine etwas kleiner machen
+* 433MHz sender umdrehen
+* taster loecher groesser
+* arduino 1mm weiter rein setzen
+
+ProfiCook:
+* wenn heizung an analog gemessene werte spinnen rum. sobald heizung aus, analoge werte in ordnung
+* analogwerte messen mit batterieversorgung der  schaltung 
+-> Lösung: 33Ohm Widerstand vor der Spannunsgeversorgung der Brausteuerung
+
