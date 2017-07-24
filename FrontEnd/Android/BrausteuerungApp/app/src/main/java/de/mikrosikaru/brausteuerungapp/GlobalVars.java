@@ -83,6 +83,7 @@ public class GlobalVars extends Application {
     private boolean mTransfereInit = false;
     private BrewState mBrewState = new BrewState();
     private String mLastErrorStr = "";
+    private boolean mDebugFileIsOn  = true;
 
     public String getFilePathData() {
         return this.mFilePath;
@@ -429,6 +430,15 @@ public class GlobalVars extends Application {
                                 Toast.LENGTH_SHORT).show();
                     }
                     break;
+                case Constants.MESSAGE_CONNECTION_FAILED:
+                    if (null != getApplicationContext()) {
+                        Toast.makeText(getApplicationContext(), msg.getData().getString(Constants.TOAST),
+                                Toast.LENGTH_SHORT).show();
+
+                        Message msgActivity = Message.obtain();
+                        msgActivity.what = Constants.MESSAGE_CONNECTION_FAILED;
+                        getProgramRunnerHandler().sendMessage(msgActivity);
+                    }
                 case Constants.MESSAGE_LOST:
                     if (null != getApplicationContext()) {
                         Toast.makeText(getApplicationContext(), msg.getData().getString(Constants.TOAST),
@@ -454,6 +464,8 @@ public class GlobalVars extends Application {
                 // Get the message bytes and tell the BluetoothChatService to write
                 byte[] send = message.getBytes();
                 mChatService.write(send);
+
+                writeString(getFilePathData()+"/" + "debugLog.txt","sendToDevice:"+message+"\n");
             }
         }
     }
@@ -616,6 +628,11 @@ public class GlobalVars extends Application {
                                             mSettings.getStateFromMessage(messageBuffer) ) {
                                         mRunBrew = true;
                                         mProgramState = mStateBrewingIsRunning;
+
+                                        writeString(getFilePathData()+"/" + "debugLog.txt",
+                                                "mStateBrewingIsRunning\n");
+
+                                        writeString(getFilePathData(),"mStateBrewingIsRunning");
                                     } else if ( mSettings.stateTune ==
                                             mSettings.getStateFromMessage(messageBuffer) ) {
                                         sendToDevice("r\r\n");
@@ -644,6 +661,9 @@ public class GlobalVars extends Application {
                             msg.what = Constants.MESSAGE_NotInitialized;
                             getProgramRunnerHandler().sendMessage(msg);
 
+                            writeString(getFilePathData()+"/" + "debugLog.txt","mStateErrorCommunication:"+
+                                    mLastErrorStr + " " + messageBuffer+"\n");
+
                             break;
                         }
                         case mStateGetSettings: {
@@ -661,9 +681,11 @@ public class GlobalVars extends Application {
                                             sendToDevice("w\r\n");
                                         } else {
                                             mProgramState = mStateErrorCommunication;
+                                            mLastErrorStr = "mStateGetSettings:setValueSettings";
                                         }
                                     } else {
                                         mProgramState = mStateErrorCommunication;
+                                        mLastErrorStr = "mStateGetSettings:stateSettings";
                                     }
                                     messageBuffer = "";
                                 }
@@ -676,6 +698,10 @@ public class GlobalVars extends Application {
                             msg.what = Constants.MESSAGE_initializedEnd;
                             getProgramRunnerHandler().sendMessage(msg);
                             mProgramState = mStateInitialzed;
+
+                            writeString(getFilePathData()+"/" + "debugLog.txt",
+                                    "mStateGetSettingsEnd\n");
+
                             break;
                         }
                         case mStateGetBrewSteps:
@@ -858,6 +884,7 @@ public class GlobalVars extends Application {
                             break;
                         }
                         case mStateInitBrewStepStore: {
+                            // startet download vom Rezept auf Geraet
                             Message msg = Message.obtain();
                             msg.what = Constants.MESSAGE_disableButtonsAll;
                             getProgramRunnerHandler().sendMessage(msg);
@@ -869,10 +896,6 @@ public class GlobalVars extends Application {
                             clearMessageList();
                             sendToDevice("2\r\n");
                             messageBuffer = "";
-                            try {
-                                Thread.sleep(Constants.PAUSE_TILL_CMD);
-                            } catch (InterruptedException e) {
-                            }
                             mProgramState = mStateSetBrewStepStore;
                             break;
                         }
@@ -907,6 +930,8 @@ public class GlobalVars extends Application {
                                     if ( mSettings.stateMenu ==
                                             mSettings.getStateFromMessage(message) ) {
 
+                                        writeString(getFilePathData()+"/" + "debugLog.txt",
+                                                "ProgramRunner::mStateRunBrewStepsStore Rezept geladen "+this.brewStep+"\n");
                                         Message msg = getProgramRunnerHandler()
                                                 .obtainMessage(Constants.MESSAGE_TOAST);
                                         Bundle bundle = new Bundle();
@@ -925,17 +950,30 @@ public class GlobalVars extends Application {
                                     } else if ( mSettings.stateBrewSteps ==
                                             mSettings.getStateFromMessage(message) ) {
                                         String value = mSettings.getValueBrewStep(this.brewStep, message);
+
+
+
                                         if ( value.length() != 0 ) {
                                             value += lineEnd;
                                             sendToDevice(value);
+                                            messageBuffer = "";
+                                            writeString(getFilePathData()+"/" + "debugLog.txt",
+                                                    "ProgramRunner::mStateRunBrewStepsStore " +
+                                                            this.brewStep + "," + value +"\n");
                                             mProgramState = mStateRunBrewStepsValidate;
                                         } else {
+                                            writeString(getFilePathData()+"/" + "debugLog.txt",
+                                                    "ProgramRunner::mStateRunBrewStepsStore mStateErrorBrewSteps " +
+                                                            this.brewStep + "," + value +"\n");
                                             mProgramState = mStateErrorBrewSteps;
-                                            mLastErrorStr = "mStateRunBrewStepsStore";
+                                            mLastErrorStr = "mStateRunBrewStepsStore:length";
                                         }
                                     } else {
+                                        writeString(getFilePathData()+"/" + "debugLog.txt",
+                                                "ProgramRunner::mStateRunBrewStepsStore " +
+                                                        this.brewStep + "\n");
                                         mProgramState = mStateErrorBrewSteps;
-                                        mLastErrorStr = "mStateRunBrewStepsStore";
+                                        mLastErrorStr = "mStateRunBrewStepsStore:stateBrewSteps";
                                     }
                                     messageBuffer = trimAfterLineEnd(messageBuffer);
                                 }
@@ -948,6 +986,9 @@ public class GlobalVars extends Application {
                                 messageBuffer += getFirstMessage();
                                 Log.d(TAG, "ProgramRunner::mStateRunBrewStepsValidate messageBuffer:"+messageBuffer);
                                 if (isMessageComplete(messageBuffer)) {
+                                    writeString(getFilePathData()+"/" + "debugLog.txt",
+                                            "ProgramRunner::mStateRunBrewStepsStore " +
+                                                    this.brewStep + "," + messageBuffer +"\n");
                                     messageBuffer = trimAfterLineEnd(messageBuffer);
                                     mProgramState = mStateRunBrewStepsStore;
                                 }
@@ -965,6 +1006,9 @@ public class GlobalVars extends Application {
                                     , getResources().getString(R.string.state_str_store_error));
                             msg.setData(bundle);
                             getProgramRunnerHandler().sendMessage(msg);
+
+                            writeString(getFilePathData()+"/" + "debugLog.txt","mStateErrorBrewSteps:"+
+                                    mLastErrorStr + " " + messageBuffer+"\n");
 
                             mProgramState = mStateMainMenu;
                             break;
@@ -1195,7 +1239,16 @@ public class GlobalVars extends Application {
             this.endThread = endThread;
         }
 
-        public boolean writeString(String filePath,String text) {
+
+
+        public void reset() {
+            this.result = 0;
+            mProgramState = mStateUndefined;
+        }
+    }
+
+    public boolean writeString(String filePath,String text) {
+        if ( mDebugFileIsOn ) {
             FileOutputStream fos;
             File tempFile = new File(filePath);
 
@@ -1217,16 +1270,11 @@ public class GlobalVars extends Application {
             } catch (FileNotFoundException e) {
                 Log.w(TAG, "FileOutputStream FileNotFoundException exception: - " + e.toString());
                 return false;
-            }catch(IOException e){
+            } catch (IOException e) {
                 Log.w(TAG, "FileOutputStream IOException exception: - " + e.toString());
                 return false;
             }
-            return true;
         }
-
-        public void reset() {
-            this.result = 0;
-            mProgramState = mStateUndefined;
-        }
+        return true;
     }
 }

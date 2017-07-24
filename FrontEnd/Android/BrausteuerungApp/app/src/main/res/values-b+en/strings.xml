@@ -118,4 +118,5 @@
     <string name="state_str_BrewingIsNotRunning">Brauen gestoppt</string>
     <string name="state_str_Bluetooth_Connected">Mit Steuerung verbunden</string>
     <string name="state_str_Bluetooth_NotConnected">Von Steurung getrennt</string>
+    <string name="file_str_file_not_transfered">Kein Rezept übertragen</string>
 </resources>

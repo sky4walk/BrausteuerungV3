@@ -87,6 +87,7 @@
     <string name="file_str_file_save_err">Speichere Datei Fehler</string>
     <string name="file_str_file_load">Lade Datei </string>
     <string name="file_str_file_load_err">Lade Datei Fehler </string>
+    <string name="file_str_file_not_transfered">Kein Rezept übertragen</string>
     <string name="file_str_file_defaut_name">sendFile</string>
     <string name="file_str_file_extCardDir">/storage/extSdCard</string>
     <string name="file_str_file_csv_sep">;</string>

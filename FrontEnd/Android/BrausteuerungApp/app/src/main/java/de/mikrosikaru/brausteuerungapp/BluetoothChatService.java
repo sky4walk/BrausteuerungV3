@@ -269,7 +269,7 @@ public class BluetoothChatService {
      */
     private void connectionFailed() {
         // Send a failure message back to the Activity
-        Message msg = mHandler.obtainMessage(Constants.MESSAGE_LOST);
+        Message msg = mHandler.obtainMessage(Constants.MESSAGE_CONNECTION_FAILED);
         Bundle bundle = new Bundle();
         bundle.putString(Constants.TOAST, "Unable to connect device");
         msg.setData(bundle);

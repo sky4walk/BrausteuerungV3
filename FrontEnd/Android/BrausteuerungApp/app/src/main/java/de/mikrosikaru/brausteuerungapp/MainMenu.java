@@ -71,7 +71,9 @@ public class MainMenu extends AppCompatActivity {
                 MediaPlayer.create(getApplicationContext(), notification),
                 RingtoneManager.getRingtone(getApplicationContext(), notification));
         getGlobalVars().setProgramRunnerHandler(handlerUI);
-        getGlobalVars().getSettings().createBrewSteps(getString(R.string.title_recipe_name));
+        if(savedInstanceState == null){
+            getGlobalVars().getSettings().createBrewSteps(getString(R.string.title_recipe_name));
+        }
 
         onClickButtonListener();
 
@@ -345,6 +347,11 @@ public class MainMenu extends AppCompatActivity {
                 showText();
             } else if ( msg.what == Constants.MESSAGE_BtLost) {
                 mConnectingBT = false;
+                checkState();
+                showText();
+            } else if ( msg.what == Constants.MESSAGE_CONNECTION_FAILED) {
+                mConnectingBT = false;
+                mBtAddress = "";
                 checkState();
                 showText();
             } else if (msg.what == Constants.MESSAGE_disableButtonsAll) {

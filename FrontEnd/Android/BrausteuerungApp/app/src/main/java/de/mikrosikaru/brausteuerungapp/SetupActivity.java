@@ -159,7 +159,12 @@ public class SetupActivity extends AppCompatActivity {
 //        }
 
         if ( getGlobalVars().getSettings().isPid()){
+            mChB_pid.setChecked(true);
+            enableEditText(mEditTextSettingPidWndSize,true);
+            enableEditText(mEditTextSettingPidSampleTime,true);
+            enableEditText(mEditTextSettingPidDelta,true);
         } else {
+            mChB_pid.setChecked(false);
             enableEditText(mEditTextSettingPidWndSize,false);
             enableEditText(mEditTextSettingPidSampleTime,false);
             enableEditText(mEditTextSettingPidDelta,false);

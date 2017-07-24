@@ -193,10 +193,10 @@ public class RecipeStepFragment extends Fragment {
                 try {
                     float maxVal = getGlobalVars().getSettings().getBrewStep(mRastNr).getMaxTemp();
                     float value = Float.parseFloat(s.toString());
-                    if ( value <= maxVal)
+//                    if ( value <= maxVal)
                         getGlobalVars().getSettings().getBrewStep(mRastNr).setMinTemp(value);
-                    else
-                        mETRastMin.setText(oldValue);
+//                    else
+//                        mETRastMin.setText(oldValue);
                 } catch (NumberFormatException e) {
                     mETRastMin.setText(oldValue);
                 }
@@ -219,10 +219,10 @@ public class RecipeStepFragment extends Fragment {
                 try {
                     float minVal = getGlobalVars().getSettings().getBrewStep(mRastNr).getMinTemp();
                     float value = Float.parseFloat(s.toString());
-                    if ( minVal <= value )
+//                    if ( minVal <= value )
                         getGlobalVars().getSettings().getBrewStep(mRastNr).setMaxTemp(value);
-                    else
-                        mETRastMax.setText(oldValue);
+//                    else
+//                        mETRastMax.setText(oldValue);
                 } catch (NumberFormatException e) {
                     mETRastMax.setText(oldValue);
                 }

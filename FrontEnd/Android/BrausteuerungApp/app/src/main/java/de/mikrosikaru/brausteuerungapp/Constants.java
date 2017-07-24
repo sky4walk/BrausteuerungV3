@@ -21,7 +21,7 @@ public interface Constants {
     public static final int MESSAGE_BtLost             = 15;
     public static final int MESSAGE_NotInitialized     = 16;
     public static final int MESSAGE_RecipeTransfered   = 17;
-
+    public static final int MESSAGE_CONNECTION_FAILED  = 18;
 
 
     // Key names received from the BluetoothChatService Handler

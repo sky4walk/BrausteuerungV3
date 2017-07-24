@@ -94,7 +94,20 @@ public class RunActivity extends AppCompatActivity {
                                                  getGlobalVars().stopBrewing();
                                                  getGlobalVars().giveAlarm(false);
                                              } else {
-                                                 getGlobalVars().startBrewing(mChooseRastNr);
+
+                                                 String tmpFileName = SimpleFileDialog.getFilePath(getApplicationContext());
+                                                 tmpFileName += "/" + getApplicationContext().getString(R.string.file_str_file_defaut_name);
+                                                 tmpFileName += getGlobalVars().getConnectedMacAdressConverted();
+                                                 tmpFileName += "." + getString(R.string.file_str_file_ending);
+
+                                                 if ( SimpleFileDialog.file_exists(tmpFileName)) {
+                                                     getGlobalVars().startBrewing(mChooseRastNr);
+                                                 } else {
+                                                     Toast.makeText(getApplicationContext(), getString(R.string.file_str_file_not_transfered),
+                                                             Toast.LENGTH_SHORT).show();
+                                                     mBtn_start.setEnabled(true);
+                                                 }
+
                                              }
                                          }
                                      }
