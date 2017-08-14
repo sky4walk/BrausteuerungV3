@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
-<recipe AppDevice="mikroSikaru.de" AppName="BrausteuerungApp" AppVersion="1.7">
-  <description>Obergäriges Bockbier
+<recipe AppDevice="mikroSikaru.de" AppName="BrausteuerungApp" AppVersion="1.19">
+  <description>ObergÃ¤riges Bockbier
 16L Hauptguss
 10L Nachguss 
 </description>
@@ -22,11 +22,11 @@
     <MaxGradient>0.0</MaxGradient>
     <Info>Schuettung
 3,4 kg Wiener Malz
-1,6 kg Münchner Malz</Info>
+1,6 kg MÃ¼nchner Malz</Info>
   </rast>
   <rast>
     <Nr>1</Nr>
-    <Name>Eiweissrsst</Name>
+    <Name>Eiweissrast</Name>
     <On>true</On>
     <Halt>false</Halt>
     <Call>false</Call>
@@ -34,7 +34,7 @@
     <Time>10</Time>
     <MinTemp>-0.1</MinTemp>
     <MaxTemp>0.1</MaxTemp>
-    <Kp>0.0</Kp>
+    <Kp>2.0</Kp>
     <Ki>0.0</Ki>
     <Kd>0.0</Kd>
     <OnTimePulse>0</OnTimePulse>
@@ -52,7 +52,7 @@
     <Time>45</Time>
     <MinTemp>-0.1</MinTemp>
     <MaxTemp>0.1</MaxTemp>
-    <Kp>0.0</Kp>
+    <Kp>2.0</Kp>
     <Ki>0.0</Ki>
     <Kd>0.0</Kd>
     <OnTimePulse>0</OnTimePulse>
@@ -70,7 +70,7 @@
     <Time>20</Time>
     <MinTemp>-0.1</MinTemp>
     <MaxTemp>0.1</MaxTemp>
-    <Kp>0.0</Kp>
+    <Kp>2.0</Kp>
     <Ki>0.0</Ki>
     <Kd>0.0</Kd>
     <OnTimePulse>0</OnTimePulse>
@@ -88,7 +88,7 @@
     <Time>5</Time>
     <MinTemp>-0.1</MinTemp>
     <MaxTemp>0.1</MaxTemp>
-    <Kp>0.0</Kp>
+    <Kp>2.0</Kp>
     <Ki>0.0</Ki>
     <Kd>0.0</Kd>
     <OnTimePulse>0</OnTimePulse>
@@ -202,10 +202,10 @@
     <OnTimePulse>0</OnTimePulse>
     <OffTimePulse>0</OffTimePulse>
     <MaxGradient>0.0</MaxGradient>
-    <Info>kräftig umruehren und absetzen lassen;
+    <Info>krÃ¤ftig umruehren und absetzen lassen;
     2l Speise entnehmen, Speise und Wuerze
     abkuehlen lassen und dann 11g Hefe 
-    Danstar Notthingham bei 30°C anstellen
+    Danstar Notthingham bei 30C anstellen
     von der Speise Stammwuerze messen und nach Ende der Gaerung oder 7g/L Zucker.
     </Info>
   </rast>
