@@ -45,7 +45,7 @@
 ///////////////////////////////////////////////////////////////////////////////
 // defines
 ///////////////////////////////////////////////////////////////////////////////
-#define VERSION                    301708
+#define VERSION                    301709
 #define TIMER_TEMP_MEASURE         4000
 #define TIMER_SAVE_STATE           30000
 #define SERIAL_BAUD_RATE           57600
