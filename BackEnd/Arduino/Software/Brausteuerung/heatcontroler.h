@@ -184,8 +184,9 @@ class HystereseControler : HeatControler
       if (  actTemp >
             mSettings.getBrewStepSollTemp(mActSettingsNr) +
             mSettings.getMaxOverHeat() &&
-			0 != mSettings.getBrewStepSollTemp(mActSettingsNr) &&
-            0 != mSettings.getMaxOverHeat() ) {
+            0 != mSettings.getBrewStepSollTemp(mActSettingsNr) &&
+            0 != mSettings.getMaxOverHeat() &&
+            !isCooling() ) {
         return true;
       }
       return false;
