@@ -451,7 +451,6 @@ class SystemSettings
       boolean  call;
       boolean  halt;
       boolean  on;
-      boolean  coolDown;
       float sollTemp;
       unsigned long  time;
       float minTemp;

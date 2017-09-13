@@ -54,7 +54,9 @@ class Brew
       mTempReached(false),
       mIsBatLow(false),
       mActSettingsNr(0),
-      mActTemp(0)
+      mActTemp(0),
+	  mLastTemp(0),
+	  mStartTemp(0)
     {
     }
     void init()
@@ -86,6 +88,7 @@ class Brew
       ((HeatControler&)mControlerHyst).setActParams(mActSettingsNr);
       mControlerHyst.init();
 
+	  mStartTemp = 0;
     }
     void resetAlarm() {
       mAlarmType = ALARM_NO;
@@ -212,7 +215,7 @@ class Brew
             }
 
             // Ueberhitzungsschutz
-            if ( on && mControlerHyst.isOverHeating(mActTemp) ) {
+            if ( on && mControlerHyst.isOverHeating(mActTemp,mStartTemp) ) {
               mAlarmType = ALARM_OVERHEAT;
             }
 
@@ -295,6 +298,7 @@ class Brew
     int mActSettingsNr;
     float mActTemp;
     float mLastTemp;
+    float mStartTemp;
     byte mAlarmType;
     byte mGradientCycleCnt;
 };

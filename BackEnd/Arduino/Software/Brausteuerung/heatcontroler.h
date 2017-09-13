@@ -180,12 +180,20 @@ class HystereseControler : HeatControler
       else
         return false;
     }
-    boolean isOverHeating(float actTemp) {
+	boolean isCoolDown(float startTemp) {
+		if ( startTemp >
+		     mSettings.getBrewStepSollTemp(mActSettingsNr) +
+             mSettings.getMaxOverHeat() ) {
+			 return true;
+		}
+		return false;
+	}
+    boolean isOverHeating(float actTemp, float startTemp) {
       if (  actTemp >
             mSettings.getBrewStepSollTemp(mActSettingsNr) +
             mSettings.getMaxOverHeat() &&
-            0 != mSettings.getBrewStepSollTemp(mActSettingsNr) &&
             0 != mSettings.getMaxOverHeat() &&
+			!isCoolDown(startTemp) &&
             !isCooling() ) {
         return true;
       }
