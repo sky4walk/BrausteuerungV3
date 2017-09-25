@@ -18,8 +18,8 @@ class TemperaturSensor
 {
   public:
     TemperaturSensor(
-		byte pin,
-		SystemSettings& settings) :
+      byte pin,
+      SystemSettings& settings) :
       mPin(pin),
       mGradientPos(0),
       mSettings(settings)
@@ -39,9 +39,9 @@ class TemperaturSensor
     }
     float getActVal() {
       if ( 0 == mGradientPos) {
-        return mStored[MAXVALUES-1];
+        return mStored[MAXVALUES - 1];
       } else {
-        return mStored[mGradientPos-1];
+        return mStored[mGradientPos - 1];
       }
     }
     float getGradient() {
@@ -49,9 +49,9 @@ class TemperaturSensor
       // und der Gradient auf 1C/Min berechnet werden soll
       //Serial.println("grad");
       //Serial.println(getActVal());
-      //Serial.println(mStored[mGradientPos]);      
-      float res = (getActVal() - mStored[mGradientPos]) / 
-		         ( ((float)(TIMER_TEMP_MEASURE / 1000) * MAXVALUES) / 60 ) ;
+      //Serial.println(mStored[mGradientPos]);
+      float res = (getActVal() - mStored[mGradientPos]) /
+                  ( ((float)(TIMER_TEMP_MEASURE / 1000) * MAXVALUES) / 60 ) ;
       //Serial.println(res);
       return res;
     }
@@ -93,7 +93,7 @@ class TemperaturSensorDS18B20 :
       byte pin,
       SystemSettings& settings,
       DallasTemperature& sensorsDig) :
-      TemperaturSensor(pin,settings),
+      TemperaturSensor(pin, settings),
       mSensor(sensorsDig)
     {
       mType = 1;
@@ -101,6 +101,9 @@ class TemperaturSensorDS18B20 :
     void init()
     {
       pinMode(mPin, INPUT);
+      setup();
+    }
+    void setup() {
       mSensor.begin();
       mSensor.setResolution(11);
       mSensor.setWaitForConversion(false);
@@ -110,8 +113,11 @@ class TemperaturSensorDS18B20 :
     {
       float val = mSensor.getTempCByIndex(0);
       mSensor.requestTemperatures();
-//      mSensor.requestTemperaturesByAddress(mThermoNr);
-      return val*mSettings.getKalM()+mSettings.getKalT();
+      if ( -126 > val ) {
+        setup();
+      }
+      //      mSensor.requestTemperaturesByAddress(mThermoNr);
+      return val * mSettings.getKalM() + mSettings.getKalT();
     }
   private:
 
@@ -143,7 +149,7 @@ class TemperaturSensorDS18B20 :
     */
 
     DallasTemperature& mSensor;
-//    DeviceAddress mThermoNr;
+    //    DeviceAddress mThermoNr;
 };
 ///////////////////////////////////////////////////////////////////////////////
 #ifdef PROFI_COOK
@@ -158,7 +164,7 @@ class TemperaturSensorNTC :
   public:
     TemperaturSensorNTC(byte pin,
                         SystemSettings& settings) :
-      TemperaturSensor(pin,settings)     
+      TemperaturSensor(pin, settings)
     {
       mType = 2;
       mSettings.setNtc(true);
@@ -173,15 +179,15 @@ class TemperaturSensorNTC :
       for ( int i = 0; i < NTC_AKKU_VAL; i++ )
       {
         val += analogRead(mPin);
-        delay(NTC_WAIT_TIME);        
-      }      
+        delay(NTC_WAIT_TIME);
+      }
       val /= NTC_AKKU_VAL;
       return val;
     }
     float getTemperatur()
     {
       float val = temperature_NTC(getRaw() / MAXANALOGREAD);
-      return val*mSettings.getKalM()+mSettings.getKalT();
+      return val * mSettings.getKalM() + mSettings.getKalT();
     }
   protected:
     float temperature_NTC ( float inVal )
@@ -232,14 +238,14 @@ class TemperaturSensorProfiCook :
       val += oldVal;
       val /= 2;
       oldVal = val;
-      return val*mSettings.getKalM()+mSettings.getKalT();
+      return val * mSettings.getKalM() + mSettings.getKalT();
     }
   protected:
 
     float temperature_NTCProfiCok ( float inVal )
     {
       float res = 0.0f;
-      
+
       res = POL_GRAD3_D * inVal * inVal * inVal +
             POL_GRAD3_C * inVal * inVal +
             POL_GRAD3_B * inVal +
