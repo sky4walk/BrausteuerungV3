@@ -55,8 +55,8 @@ class Brew
       mIsBatLow(false),
       mActSettingsNr(0),
       mActTemp(0),
-	  mLastTemp(0),
-	  mStartTemp(0)
+      mLastTemp(0),
+      mStartTemp(0)
     {
     }
     void init()
@@ -88,7 +88,7 @@ class Brew
       ((HeatControler&)mControlerHyst).setActParams(mActSettingsNr);
       mControlerHyst.init();
 
-	  mStartTemp = 0;
+      mStartTemp = 0;
     }
     void resetAlarm() {
       mAlarmType = ALARM_NO;
@@ -97,7 +97,7 @@ class Brew
     {
       return mTempReached;
     }
-    boolean isPause(){
+    boolean isPause() {
       mTimerBrew.isPause();
     }
 #ifdef PID_REG
@@ -195,37 +195,37 @@ class Brew
             }
           }
 #endif
-
-          if ( ((HeatControler&)mControlerHyst).isHeatingStateChanged()
-#ifdef PID_REG
-               || ((HeatControler&)mControlerPid).isHeatingStateChanged()
-#endif
-             ) {
-            mTimerCnt = TIMER_MULTIPLEX;
-          }
-
           mTimerCnt++;
-          if ( TIMER_MULTIPLEX <= mTimerCnt ) {
-            mTimerCnt = 0;
+        }
 
-            // Batterie ist zu schwach
-            mIsBatLow = mBatLow.checkBatterieVoltage();
-            if ( mIsBatLow ) {
-              mAlarmType = ALARM_BATLOW;
-            }
+        if ( ((HeatControler&)mControlerHyst).isHeatingStateChanged()
+#ifdef PID_REG
+             || ((HeatControler&)mControlerPid).isHeatingStateChanged()
+#endif
+           ) {
+          mTimerCnt = TIMER_MULTIPLEX;
+        }
 
-            // Ueberhitzungsschutz
-            if ( on && mControlerHyst.isOverHeating(mActTemp,mStartTemp) ) {
-              mAlarmType = ALARM_OVERHEAT;
-            }
+        if ( TIMER_MULTIPLEX <= mTimerCnt ) {
+          mTimerCnt = 0;
 
-            if ( mSwitchOnOff && on && (ALARM_NO == mAlarmType) ) {
-              ((Switcher&)mSwitcher).on();
-            } else {
-              ((Switcher&)mSwitcher).off();
-            }
-
+          // Batterie ist zu schwach
+          mIsBatLow = mBatLow.checkBatterieVoltage();
+          if ( mIsBatLow ) {
+            mAlarmType = ALARM_BATLOW;
           }
+
+          // Ueberhitzungsschutz
+          if ( on && mControlerHyst.isOverHeating(mActTemp, mStartTemp) ) {
+            mAlarmType = ALARM_OVERHEAT;
+          }
+
+          if ( mSwitchOnOff && on && (ALARM_NO == mAlarmType) ) {
+            ((Switcher&)mSwitcher).on();
+          } else {
+            ((Switcher&)mSwitcher).off();
+          }
+
         }
 
         if ( on && aufHeizen( mActTemp ) ) {
