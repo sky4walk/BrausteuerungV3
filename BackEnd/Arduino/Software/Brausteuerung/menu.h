@@ -164,6 +164,11 @@ class Menu
       {
         return true;
       }
+      else if ( 'x' == a )
+      {
+	    reset();
+        return true;
+      }
       else if ( 'a' == a )
       {
         mWaitInput = false;
@@ -191,6 +196,11 @@ class Menu
         {
           ret = false;
           mWaitInput = false;
+        }
+		else if ( strcmp(in, "x") == 0 )
+        {
+		  reset();
+          ret = true;
         }
         else
         {
@@ -222,6 +232,11 @@ class Menu
         {
           ret = false;
           mWaitInput = false;
+        }
+		else if ( strcmp(in, "x") == 0 )
+        {
+		  reset();
+          ret = true;
         }
         else
         {
