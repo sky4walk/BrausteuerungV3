@@ -88,7 +88,7 @@ class Brew
       ((HeatControler&)mControlerHyst).setActParams(mActSettingsNr);
       mControlerHyst.init();
 
-      mStartTemp = 0;
+      mStartTemp = mActTemp;
     }
     void resetAlarm() {
       mAlarmType = ALARM_NO;
