@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <export version="D">
   <design>
-    <source>C:/andre/daten/develop/BrausteuerungV3/BackEnd/KiCad/BrausteuerungV3/BrausteuerungV3.sch</source>
-    <date>31.07.2016 17:04:32</date>
-    <tool>Eeschema 4.0.2-stable</tool>
+    <source>C:\Users\andre\develop\BrausteuerungV3\BackEnd\KiCad\BrausteuerungV3.sch</source>
+    <date>11.01.2018 09:29:01</date>
+    <tool>Eeschema 4.0.6</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
         <title>BrausteuerungV3</title>
@@ -21,28 +21,28 @@
   <components>
     <comp ref="R4">
       <value>4,7K</value>
-      <footprint>Resistors_ThroughHole:Resistor_Horizontal_RM10mm</footprint>
+      <footprint>Resistors_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P12.70mm_Horizontal</footprint>
       <libsource lib="device" part="R"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>5788D6A3</tstamp>
     </comp>
-    <comp ref="R3">
+    <comp ref="R1">
       <value>330</value>
-      <footprint>Resistors_ThroughHole:Resistor_Horizontal_RM10mm</footprint>
+      <footprint>Resistors_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P12.70mm_Horizontal</footprint>
       <libsource lib="device" part="R"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>5788D779</tstamp>
     </comp>
-    <comp ref="R1">
-      <value>100K</value>
-      <footprint>Resistors_ThroughHole:Resistor_Horizontal_RM10mm</footprint>
+    <comp ref="R2">
+      <value>47K</value>
+      <footprint>Resistors_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P12.70mm_Horizontal</footprint>
       <libsource lib="device" part="R"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>5788D7F7</tstamp>
     </comp>
-    <comp ref="R2">
-      <value>100K</value>
-      <footprint>Resistors_ThroughHole:Resistor_Horizontal_RM10mm</footprint>
+    <comp ref="R3">
+      <value>150K</value>
+      <footprint>Resistors_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P12.70mm_Horizontal</footprint>
       <libsource lib="device" part="R"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>5788D863</tstamp>
@@ -50,7 +50,7 @@
     <comp ref="D1">
       <value>LED</value>
       <footprint>LEDs:LED-3MM</footprint>
-      <libsource lib="device" part="LED"/>
+      <libsource lib="BrausteuerungV3-rescue" part="LED-RESCUE-BrausteuerungV3"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>5788DA4B</tstamp>
     </comp>
@@ -62,20 +62,20 @@
       <tstamp>5788DF8B</tstamp>
     </comp>
     <comp ref="U1">
-      <value>arduino_mini</value>
+      <value>arduino_nano</value>
       <footprint>arduino:arduino_mini</footprint>
       <libsource lib="arduino" part="arduino_mini"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>5788E7B1</tstamp>
     </comp>
-    <comp ref="J2">
+    <comp ref="J3">
       <value>Transmitter433MHz</value>
       <footprint>Transmitter433MHz:Transmitter433MHz</footprint>
-      <libsource lib="BrausteuerungV3-rescue" part="Transmitter433MHz-RESCUE-BrausteuerungV3"/>
+      <libsource lib="BrausteuerungV3-cache" part="Transmitter433MHz-RESCUE-BrausteuerungV3"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>578A305F</tstamp>
     </comp>
-    <comp ref="J3">
+    <comp ref="J4">
       <value>HC-06</value>
       <footprint>HC-06:HC-06</footprint>
       <libsource lib="hc-06" part="HC-06"/>
@@ -89,7 +89,7 @@
       <sheetpath names="/" tstamps="/"/>
       <tstamp>578A6220</tstamp>
     </comp>
-    <comp ref="J4">
+    <comp ref="J2">
       <value>myPiezzo</value>
       <footprint>myPiezzo:PIEZZO</footprint>
       <libsource lib="myPiezzo" part="myPiezzo"/>
@@ -97,29 +97,75 @@
       <tstamp>579E0D29</tstamp>
     </comp>
     <comp ref="P1">
-      <value>CONN_01X02</value>
-      <footprint>Connect:GS2</footprint>
+      <value>Power 9V</value>
+      <footprint>LEDs:LED-3MM</footprint>
       <libsource lib="conn" part="CONN_01X02"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>579E1182</tstamp>
     </comp>
+    <comp ref="D2">
+      <value>1n4001</value>
+      <footprint>Resistors_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P12.70mm_Horizontal</footprint>
+      <libsource lib="device" part="D"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>58B2CCBB</tstamp>
+    </comp>
+    <comp ref="R5">
+      <value>1K</value>
+      <footprint>Resistors_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P12.70mm_Horizontal</footprint>
+      <libsource lib="device" part="R"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5A568ECA</tstamp>
+    </comp>
+    <comp ref="R6">
+      <value>2K</value>
+      <footprint>Resistors_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P12.70mm_Horizontal</footprint>
+      <libsource lib="device" part="R"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5A5691D6</tstamp>
+    </comp>
+    <comp ref="P2">
+      <value>Switch</value>
+      <footprint>LEDs:LED-3MM</footprint>
+      <libsource lib="conn" part="CONN_01X02"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5A56A656</tstamp>
+    </comp>
   </components>
   <libparts>
     <libpart lib="conn" part="CONN_01X02">
-      <description>Connector 01x02</description>
+      <description>Connector, single row, 01x02, pin header</description>
       <footprints>
-        <fp>Pin_Header_Straight_1X02</fp>
-        <fp>Pin_Header_Angled_1X02</fp>
-        <fp>Socket_Strip_Straight_1X02</fp>
-        <fp>Socket_Strip_Angled_1X02</fp>
+        <fp>Pin_Header_Straight_1X*</fp>
+        <fp>Pin_Header_Angled_1X*</fp>
+        <fp>Socket_Strip_Straight_1X*</fp>
+        <fp>Socket_Strip_Angled_1X*</fp>
       </footprints>
       <fields>
-        <field name="Reference">P</field>
+        <field name="Reference">J</field>
         <field name="Value">CONN_01X02</field>
       </fields>
       <pins>
         <pin num="1" name="P1" type="passive"/>
         <pin num="2" name="P2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="device" part="D">
+      <description>Diode</description>
+      <footprints>
+        <fp>TO-???*</fp>
+        <fp>*SingleDiode</fp>
+        <fp>*_Diode_*</fp>
+        <fp>*SingleDiode*</fp>
+        <fp>D_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">D</field>
+      </fields>
+      <pins>
+        <pin num="1" name="K" type="passive"/>
+        <pin num="2" name="A" type="passive"/>
       </pins>
     </libpart>
     <libpart lib="DS1820" part="DS1820">
@@ -160,7 +206,7 @@
         <pin num="4" name="4" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="device" part="LED">
+    <libpart lib="BrausteuerungV3-rescue" part="LED-RESCUE-BrausteuerungV3">
       <footprints>
         <fp>LED-3MM</fp>
         <fp>LED-5MM</fp>
@@ -172,7 +218,7 @@
       </footprints>
       <fields>
         <field name="Reference">D</field>
-        <field name="Value">LED</field>
+        <field name="Value">LED-RESCUE-BrausteuerungV3</field>
       </fields>
       <pins>
         <pin num="1" name="K" type="passive"/>
@@ -183,7 +229,7 @@
       <description>Resistor</description>
       <footprints>
         <fp>R_*</fp>
-        <fp>Resistor_*</fp>
+        <fp>R_*</fp>
       </footprints>
       <fields>
         <field name="Reference">R</field>
@@ -194,7 +240,7 @@
         <pin num="2" name="~" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="BrausteuerungV3-rescue" part="Transmitter433MHz-RESCUE-BrausteuerungV3">
+    <libpart lib="BrausteuerungV3-cache" part="Transmitter433MHz-RESCUE-BrausteuerungV3">
       <fields>
         <field name="Reference">J</field>
         <field name="Value">Transmitter433MHz-RESCUE-BrausteuerungV3</field>
@@ -256,155 +302,172 @@
     </libpart>
   </libparts>
   <libraries>
-    <library logical="myPiezzo">
-      <uri>C:\andre\daten\develop\BrausteuerungV3\BackEnd\KiCad\BrausteuerungV3\myPiezzo.lib</uri>
+    <library logical="arduino">
+      <uri>C:\Users\andre\develop\BrausteuerungV3\BackEnd\KiCad\arduino.lib</uri>
+    </library>
+    <library logical="BrausteuerungV3-cache">
+      <uri>C:\Users\andre\develop\BrausteuerungV3\BackEnd\KiCad\BrausteuerungV3-cache.lib</uri>
     </library>
     <library logical="hc-06">
-      <uri>C:\andre\daten\develop\BrausteuerungV3\BackEnd\KiCad\BrausteuerungV3\hc-06.lib</uri>
+      <uri>C:\Users\andre\develop\BrausteuerungV3\BackEnd\KiCad\hc-06.lib</uri>
     </library>
     <library logical="khtaster">
-      <uri>C:\andre\daten\develop\BrausteuerungV3\BackEnd\KiCad\BrausteuerungV3\khtaster.lib</uri>
+      <uri>C:\Users\andre\develop\BrausteuerungV3\BackEnd\KiCad\khtaster.lib</uri>
     </library>
-    <library logical="DS1820">
-      <uri>C:\andre\daten\develop\BrausteuerungV3\BackEnd\KiCad\BrausteuerungV3\DS1820.lib</uri>
+    <library logical="myPiezzo">
+      <uri>C:\Users\andre\develop\BrausteuerungV3\BackEnd\KiCad\myPiezzo.lib</uri>
     </library>
     <library logical="BrausteuerungV3-rescue">
-      <uri>C:\andre\daten\develop\BrausteuerungV3\BackEnd\KiCad\BrausteuerungV3\BrausteuerungV3-rescue.lib</uri>
+      <uri>C:\Users\andre\develop\BrausteuerungV3\BackEnd\KiCad\BrausteuerungV3-rescue.lib</uri>
+    </library>
+    <library logical="DS1820">
+      <uri>C:\Users\andre\develop\BrausteuerungV3\BackEnd\KiCad\DS1820.lib</uri>
     </library>
     <library logical="device">
       <uri>C:\Program Files\KiCad\share\kicad\library\device.lib</uri>
-    </library>
-    <library logical="arduino">
-      <uri>C:\andre\daten\develop\BrausteuerungV3\BackEnd\KiCad\BrausteuerungV3\arduino.lib</uri>
     </library>
     <library logical="conn">
       <uri>C:\Program Files\KiCad\share\kicad\library\conn.lib</uri>
     </library>
   </libraries>
   <nets>
-    <net code="1" name="Net-(IC1-Pad2)">
-      <node ref="R4" pin="2"/>
-      <node ref="IC1" pin="2"/>
-      <node ref="U1" pin="30"/>
+    <net code="1" name="Net-(J4-Pad3)">
+      <node ref="J4" pin="3"/>
+      <node ref="U1" pin="28"/>
     </net>
-    <net code="2" name="Net-(R1-Pad1)">
-      <node ref="R2" pin="2"/>
-      <node ref="R1" pin="1"/>
-      <node ref="U1" pin="4"/>
-    </net>
-    <net code="3" name="Net-(D1-Pad2)">
-      <node ref="D1" pin="2"/>
-      <node ref="R3" pin="2"/>
-    </net>
-    <net code="4" name="Net-(J3-Pad4)">
-      <node ref="J3" pin="4"/>
-      <node ref="U1" pin="29"/>
-    </net>
-    <net code="5" name="Net-(J1-Pad1)">
+    <net code="2" name="Net-(J1-Pad1)">
       <node ref="U1" pin="20"/>
       <node ref="J1" pin="1"/>
     </net>
-    <net code="6" name="Net-(J2-Pad1)">
-      <node ref="J2" pin="1"/>
-      <node ref="U1" pin="26"/>
-    </net>
-    <net code="7" name="Net-(J4-Pad1)">
-      <node ref="U1" pin="27"/>
-      <node ref="J4" pin="1"/>
-    </net>
-    <net code="8" name="Net-(J3-Pad3)">
-      <node ref="J3" pin="3"/>
-      <node ref="U1" pin="28"/>
-    </net>
-    <net code="9" name="Net-(IC1-Pad3)">
-      <node ref="J3" pin="1"/>
-      <node ref="U1" pin="12"/>
-      <node ref="IC1" pin="3"/>
-      <node ref="R4" pin="1"/>
+    <net code="3" name="GNDREF">
+      <node ref="R6" pin="2"/>
+      <node ref="IC1" pin="1"/>
+      <node ref="R1" pin="1"/>
+      <node ref="J1" pin="2"/>
       <node ref="J2" pin="2"/>
-      <node ref="R3" pin="1"/>
+      <node ref="R2" pin="2"/>
+      <node ref="P1" pin="1"/>
+      <node ref="U1" pin="14"/>
+      <node ref="J4" pin="2"/>
+      <node ref="J3" pin="3"/>
     </net>
-    <net code="10" name="Net-(U1-Pad7)">
-      <node ref="U1" pin="7"/>
+    <net code="4" name="Net-(J3-Pad1)">
+      <node ref="U1" pin="26"/>
+      <node ref="J3" pin="1"/>
     </net>
-    <net code="11" name="Net-(U1-Pad1)">
-      <node ref="U1" pin="1"/>
+    <net code="5" name="Net-(J2-Pad1)">
+      <node ref="J2" pin="1"/>
+      <node ref="U1" pin="27"/>
     </net>
-    <net code="12" name="Net-(U1-Pad2)">
-      <node ref="U1" pin="2"/>
+    <net code="6" name="Net-(IC1-Pad2)">
+      <node ref="IC1" pin="2"/>
+      <node ref="U1" pin="30"/>
+      <node ref="R4" pin="2"/>
     </net>
-    <net code="13" name="Net-(U1-Pad3)">
-      <node ref="U1" pin="3"/>
+    <net code="7" name="Net-(D2-Pad2)">
+      <node ref="P2" pin="2"/>
+      <node ref="D2" pin="2"/>
     </net>
-    <net code="14" name="Net-(U1-Pad5)">
-      <node ref="U1" pin="5"/>
+    <net code="8" name="Net-(R5-Pad2)">
+      <node ref="U1" pin="29"/>
+      <node ref="R5" pin="2"/>
     </net>
-    <net code="15" name="Net-(U1-Pad6)">
-      <node ref="U1" pin="6"/>
+    <net code="9" name="Net-(J4-Pad4)">
+      <node ref="R5" pin="1"/>
+      <node ref="R6" pin="1"/>
+      <node ref="J4" pin="4"/>
     </net>
-    <net code="16" name="+9V">
-      <node ref="R2" pin="1"/>
+    <net code="10" name="+9V">
+      <node ref="P2" pin="1"/>
       <node ref="P1" pin="2"/>
-      <node ref="U1" pin="15"/>
     </net>
-    <net code="17" name="Net-(U1-Pad8)">
-      <node ref="U1" pin="8"/>
-    </net>
-    <net code="18" name="Net-(U1-Pad9)">
-      <node ref="U1" pin="9"/>
-    </net>
-    <net code="19" name="Net-(U1-Pad10)">
-      <node ref="U1" pin="10"/>
-    </net>
-    <net code="20" name="Net-(U1-Pad11)">
-      <node ref="U1" pin="11"/>
-    </net>
-    <net code="21" name="Net-(U1-Pad21)">
+    <net code="11" name="Net-(D1-Pad2)">
+      <node ref="D1" pin="2"/>
       <node ref="U1" pin="21"/>
     </net>
-    <net code="22" name="GNDREF">
-      <node ref="J2" pin="3"/>
-      <node ref="J3" pin="2"/>
-      <node ref="J1" pin="2"/>
-      <node ref="J4" pin="2"/>
-      <node ref="U1" pin="14"/>
-      <node ref="P1" pin="1"/>
+    <net code="12" name="Net-(D1-Pad1)">
       <node ref="R1" pin="2"/>
       <node ref="D1" pin="1"/>
-      <node ref="IC1" pin="1"/>
     </net>
-    <net code="23" name="Net-(J1-Pad4)">
-      <node ref="J1" pin="4"/>
+    <net code="13" name="Net-(U1-Pad2)">
+      <node ref="U1" pin="2"/>
     </net>
-    <net code="24" name="Net-(J1-Pad3)">
-      <node ref="J1" pin="3"/>
+    <net code="14" name="Net-(U1-Pad3)">
+      <node ref="U1" pin="3"/>
     </net>
-    <net code="25" name="GND">
-      <node ref="U1" pin="19"/>
+    <net code="15" name="Net-(U1-Pad4)">
+      <node ref="U1" pin="4"/>
     </net>
-    <net code="26" name="Net-(U1-Pad18)">
-      <node ref="U1" pin="18"/>
+    <net code="16" name="Net-(U1-Pad6)">
+      <node ref="U1" pin="6"/>
     </net>
-    <net code="27" name="Net-(U1-Pad17)">
-      <node ref="U1" pin="17"/>
+    <net code="17" name="Net-(U1-Pad7)">
+      <node ref="U1" pin="7"/>
     </net>
-    <net code="28" name="Net-(U1-Pad16)">
-      <node ref="U1" pin="16"/>
+    <net code="18" name="Net-(U1-Pad8)">
+      <node ref="U1" pin="8"/>
     </net>
-    <net code="29" name="Net-(U1-Pad25)">
-      <node ref="U1" pin="25"/>
+    <net code="19" name="Net-(U1-Pad9)">
+      <node ref="U1" pin="9"/>
     </net>
-    <net code="30" name="Net-(U1-Pad24)">
-      <node ref="U1" pin="24"/>
+    <net code="20" name="Net-(U1-Pad10)">
+      <node ref="U1" pin="10"/>
     </net>
-    <net code="31" name="Net-(U1-Pad23)">
-      <node ref="U1" pin="23"/>
+    <net code="21" name="Net-(U1-Pad1)">
+      <node ref="U1" pin="1"/>
     </net>
-    <net code="32" name="Net-(U1-Pad13)">
+    <net code="22" name="Net-(U1-Pad11)">
+      <node ref="U1" pin="11"/>
+    </net>
+    <net code="23" name="Net-(U1-Pad22)">
+      <node ref="U1" pin="22"/>
+    </net>
+    <net code="24" name="Net-(U1-Pad13)">
       <node ref="U1" pin="13"/>
     </net>
-    <net code="33" name="Net-(U1-Pad22)">
-      <node ref="U1" pin="22"/>
+    <net code="25" name="Net-(U1-Pad23)">
+      <node ref="U1" pin="23"/>
+    </net>
+    <net code="26" name="Net-(U1-Pad24)">
+      <node ref="U1" pin="24"/>
+    </net>
+    <net code="27" name="Net-(U1-Pad25)">
+      <node ref="U1" pin="25"/>
+    </net>
+    <net code="28" name="Net-(IC1-Pad3)">
+      <node ref="J4" pin="1"/>
+      <node ref="J3" pin="2"/>
+      <node ref="R4" pin="1"/>
+      <node ref="U1" pin="12"/>
+      <node ref="IC1" pin="3"/>
+    </net>
+    <net code="29" name="Net-(D2-Pad1)">
+      <node ref="D2" pin="1"/>
+      <node ref="U1" pin="15"/>
+      <node ref="R3" pin="1"/>
+    </net>
+    <net code="30" name="Net-(J1-Pad3)">
+      <node ref="J1" pin="3"/>
+    </net>
+    <net code="31" name="Net-(J1-Pad4)">
+      <node ref="J1" pin="4"/>
+    </net>
+    <net code="32" name="Net-(R2-Pad1)">
+      <node ref="U1" pin="5"/>
+      <node ref="R3" pin="2"/>
+      <node ref="R2" pin="1"/>
+    </net>
+    <net code="33" name="Net-(U1-Pad16)">
+      <node ref="U1" pin="16"/>
+    </net>
+    <net code="34" name="Net-(U1-Pad17)">
+      <node ref="U1" pin="17"/>
+    </net>
+    <net code="35" name="Net-(U1-Pad18)">
+      <node ref="U1" pin="18"/>
+    </net>
+    <net code="36" name="GND">
+      <node ref="U1" pin="19"/>
     </net>
   </nets>
 </export>

@@ -6,28 +6,28 @@ EESchema-LIBRARY Version 2.3
 DEF +9V #PWR 0 0 Y Y 1 F P
 F0 "#PWR" 0 -150 50 H I C CNN
 F1 "+9V" 0 140 50 H V C CNN
-F2 "" 0 0 50 H V C CNN
-F3 "" 0 0 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
 DRAW
-P 2 0 1 0  -30 50  0 100 N
-P 2 0 1 0  0 0  0 100 N
-P 2 0 1 0  0 100  30 50 N
+P 2 0 1 0 -30 50 0 100 N
+P 2 0 1 0 0 0 0 100 N
+P 2 0 1 0 0 100 30 50 N
 X +9V 1 0 0 0 U 50 50 1 1 W N
 ENDDRAW
 ENDDEF
 #
 # CONN_01X02
 #
-DEF CONN_01X02 P 0 40 Y N 1 F N
-F0 "P" 0 150 50 H V C CNN
+DEF CONN_01X02 J 0 40 Y N 1 F N
+F0 "J" 0 150 50 H V C CNN
 F1 "CONN_01X02" 100 0 50 V V C CNN
-F2 "" 0 0 50 H V C CNN
-F3 "" 0 0 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
 $FPLIST
- Pin_Header_Straight_1X02
- Pin_Header_Angled_1X02
- Socket_Strip_Straight_1X02
- Socket_Strip_Angled_1X02
+ Pin_Header_Straight_1X*
+ Pin_Header_Angled_1X*
+ Socket_Strip_Straight_1X*
+ Socket_Strip_Angled_1X*
 $ENDFPLIST
 DRAW
 S -50 -45 10 -55 0 1 0 N
@@ -43,18 +43,19 @@ ENDDEF
 DEF D D 0 40 N N 1 F N
 F0 "D" 0 100 50 H V C CNN
 F1 "D" 0 -100 50 H V C CNN
-F2 "" 0 0 50 H V C CNN
-F3 "" 0 0 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
 $FPLIST
- Diode_*
- D-Pak_TO252AA
+ TO-???*
  *SingleDiode
  *_Diode_*
  *SingleDiode*
+ D_*
 $ENDFPLIST
 DRAW
-P 2 0 1 6  -50 50  -50 -50 N
-P 3 0 1 0  50 50  -50 0  50 -50 F
+P 2 0 1 8 -50 50 -50 -50 N
+P 2 0 1 0 50 0 -50 0 N
+P 4 0 1 8 50 50 50 -50 -50 0 50 50 N
 X K 1 -150 0 100 R 50 50 1 1 P
 X A 2 150 0 100 L 50 50 1 1 P
 ENDDRAW
@@ -81,13 +82,13 @@ ENDDEF
 DEF GNDREF #PWR 0 0 Y Y 1 F P
 F0 "#PWR" 0 -250 50 H I C CNN
 F1 "GNDREF" 0 -150 50 H V C CNN
-F2 "" 0 0 50 H V C CNN
-F3 "" 0 0 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
 DRAW
-P 2 0 1 0  -25 -75  25 -75 N
-P 2 0 1 0  -5 -100  5 -100 N
-P 2 0 1 0  0 -50  0 0 N
-P 2 0 1 0  50 -50  -50 -50 N
+P 2 0 1 0 -25 -75 25 -75 N
+P 2 0 1 0 -5 -100 5 -100 N
+P 2 0 1 0 0 -50 0 0 N
+P 2 0 1 0 50 -50 -50 -50 N
 X GNDREF 1 0 0 0 D 50 50 1 1 W N
 ENDDRAW
 ENDDEF
@@ -125,11 +126,11 @@ X 4 4 -350 -300 200 R 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# LED
+# LED-RESCUE-BrausteuerungV3
 #
-DEF LED D 0 40 Y N 1 F N
+DEF LED-RESCUE-BrausteuerungV3 D 0 40 Y N 1 F N
 F0 "D" 0 100 50 H V C CNN
-F1 "LED" 0 -100 50 H V C CNN
+F1 "LED-RESCUE-BrausteuerungV3" 0 -100 50 H V C CNN
 F2 "" 0 0 50 H V C CNN
 F3 "" 0 0 50 H V C CNN
 $FPLIST
@@ -142,10 +143,10 @@ $FPLIST
  LEDV
 $ENDFPLIST
 DRAW
-P 2 0 1 0  -50 50  -50 -50 N
-P 3 0 1 0  -80 -25  -125 -65  -120 -40 N
-P 3 0 1 0  -65 -40  -110 -80  -105 -55 N
-P 3 0 1 0  50 50  -50 0  50 -50 F
+P 2 0 1 0 -50 50 -50 -50 N
+P 3 0 1 0 -80 -25 -125 -65 -120 -40 N
+P 3 0 1 0 -65 -40 -110 -80 -105 -55 N
+P 3 0 1 0 50 50 -50 0 50 -50 F
 X K 1 -200 0 150 R 40 40 1 1 P
 X A 2 200 0 150 L 40 40 1 1 P
 ENDDRAW
@@ -156,11 +157,11 @@ ENDDEF
 DEF R R 0 0 N Y 1 F N
 F0 "R" 80 0 50 V V C CNN
 F1 "R" 0 0 50 V V C CNN
-F2 "" -70 0 50 V V C CNN
-F3 "" 0 0 50 H V C CNN
+F2 "" -70 0 50 V I C CNN
+F3 "" 0 0 50 H I C CNN
 $FPLIST
  R_*
- Resistor_*
+ R_*
 $ENDFPLIST
 DRAW
 S -40 -100 40 100 0 1 10 N
@@ -190,7 +191,7 @@ DEF arduino_mini U 0 40 Y Y 1 F N
 F0 "U" 500 -950 70 H V C CNN
 F1 "arduino_mini" 750 -1050 70 H V C CNN
 F2 "DIL20" 0 -50 60 H V C CNN
-F3 "" 0 0 60 H V C CNN
+F3 "" 0 0 60 H I C CNN
 DRAW
 X GND 14 0 -1550 200 U 60 60 0 0 W
 X Vin 15 -150 1150 200 D 60 60 0 0 W

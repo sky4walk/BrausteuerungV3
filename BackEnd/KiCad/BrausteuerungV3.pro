@@ -1,4 +1,4 @@
-update=31.07.2016 16:27:33
+update=11.01.2018 09:05:20
 version=1
 last_client=kicad
 [pcbnew]
@@ -29,10 +29,10 @@ version=1
 version=1
 LibDir=
 [eeschema/libraries]
-LibName1=myPiezzo
-LibName2=khtaster
-LibName3=hc-06
-LibName4=BrausteuerungV3-rescue
+LibName1=BrausteuerungV3-rescue
+LibName2=myPiezzo
+LibName3=khtaster
+LibName4=hc-06
 LibName5=Transmitter433MHz
 LibName6=DS1820
 LibName7=power
