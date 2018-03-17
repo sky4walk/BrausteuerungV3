@@ -77,7 +77,7 @@ class InOutPut
     unsigned long mBaud;
 };
 ///////////////////////////////////////////////////////////////////////////////
-class InOutPutBT : InOutPut
+class InOutPutBTHC06Linvor : InOutPut
 {
     // HC-06   |   Arduino
     // VCC     |   +5V/+3,3V
@@ -105,6 +105,74 @@ class InOutPutBT : InOutPut
         print(mReadBuffer);     
         delay(1500);
         print("AT+NAMEmikroSikaru.de");
+        delay(1500);
+        mSettings.setWriteBT(false);
+        mSettings.saveState();
+      }
+      //AT+BAUD4
+    }
+    void print(const char* txt)
+    {
+      mySerial.print(txt);
+    }
+    void print(const __FlashStringHelper* txt)
+    {
+      mySerial.print(txt);
+    }
+    void println(const __FlashStringHelper* txt)
+    {
+      mySerial.println(txt);
+    }
+    void println(int val)
+    {
+      mySerial.println(val);
+    }
+    void println(const char* txt)
+    {
+      mySerial.println(txt);
+    }
+    virtual int readByte()
+    {
+      if ( mySerial.available() )
+      {
+        return mySerial.read();
+      }
+      return 0;
+    }
+  private:
+    SoftwareSerial mySerial;
+    SystemSettings& mSettings;
+};
+///////////////////////////////////////////////////////////////////////////////
+class InOutPutBTHC06V3 : InOutPut
+{
+    // HC-06   |   Arduino
+	// FW      |   V3.0 (ZS-040)
+    // VCC     |   +5V/+3,3V
+    // GND     |   GND
+    // TXD     |   pinRx (10)
+    // RXD     |   pinTx (11)
+  public:
+    InOutPutBT(SystemSettings& settings,
+               unsigned long baud,
+               byte pinTx,byte pinRx) :
+      InOutPut(baud),
+      mySerial(pinTx, pinRx),
+      mSettings(settings)
+    {
+    }
+    void init()
+    {
+      mySerial.begin(mBaud);
+      while (!mySerial) {
+        ; // wait for serial port to connect. Needed for Leonardo only
+      }
+      delay(1000);
+      if ( mSettings.getWriteBT() ) {
+        sprintf(mReadBuffer, "AT+PSWD=\"%04d\"", (unsigned int)mSettings.getPassWd());
+        println(mReadBuffer);     
+        delay(1500);
+        println("AT+NAME=mikroSikaru.de");
         delay(1500);
         mSettings.setWriteBT(false);
         mSettings.saveState();

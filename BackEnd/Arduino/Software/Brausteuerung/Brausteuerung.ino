@@ -109,7 +109,11 @@ SystemSettings settings((Storage&)store, VERSION);
 #ifdef INOUT_USB
   InOutPutUSB inout(SERIAL_BAUD_RATE);
 #else
-  InOutPutBT inout(settings,SERIAL_BAUD_RATE, PIN_BLUETOOTH_TX, PIN_BLUETOOTH_RX);
+  #ifdef FW_LINVOR
+	InOutPutBTHC06Linvor inout(settings,SERIAL_BAUD_RATE, PIN_BLUETOOTH_TX, PIN_BLUETOOTH_RX);
+  #else
+	InOutPutBTHC06V3 inout(settings,SERIAL_BAUD_RATE, PIN_BLUETOOTH_TX, PIN_BLUETOOTH_RX);
+  #endif
 #endif
 
 BatLow batLevel(PIN_BAT_LOW_ANALOG, settings);
