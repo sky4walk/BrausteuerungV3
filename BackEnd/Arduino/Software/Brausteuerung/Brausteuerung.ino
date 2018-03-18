@@ -19,8 +19,14 @@
   #define SWITCH_433MHZ
 #endif
 
+
 #define SWITCH_SETTINGS_ARENDO
 //#define SWITCH_SETTINGS_HE263
+
+#ifdef INOUT_USB
+#else
+	//#define FW_LINVOR
+#endif
 
 #ifdef SWITCH_TEST
   #define INOUT_USB
