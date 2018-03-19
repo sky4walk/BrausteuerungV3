@@ -182,27 +182,22 @@ class InOutPutBTHC06V3 : InOutPut
     void print(const char* txt)
     {
       mySerial.print(txt);
-      mySerial.print("\r\n");	  
     }
     void print(const __FlashStringHelper* txt)
     {
       mySerial.print(txt);
-	  mySerial.print("\r\n");
     }
     void println(const __FlashStringHelper* txt)
     {
-      mySerial.print(txt);
-      mySerial.println("\r\n");	  
+      mySerial.println(txt);
     }
     void println(int val)
     {
-      mySerial.print(val);
-	  mySerial.println("\r\n");
+      mySerial.println(val);
     }
     void println(const char* txt)
     {
-      mySerial.print(txt);
-	  mySerial.println("\r\n");
+      mySerial.println(txt);
     }
     virtual int readByte()
     {
