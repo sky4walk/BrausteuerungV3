@@ -51,8 +51,12 @@
 ///////////////////////////////////////////////////////////////////////////////
 // defines
 ///////////////////////////////////////////////////////////////////////////////
-#define VERSION                    301709
-#define TIMER_TEMP_MEASURE         4000
+#define VERSION                    301803
+#define TEMP_MEASURE_RESOLUTION    12
+#define TIMER_TEMP_MEASURE		   4000
+#define PID_WND_SIZE			   TIMER_TEMP_MEASURE
+//#define TIMER_TEMP_MEASURE 	   (800 / (1 << (12 - TEMP_MEASURE_RESOLUTION))) 
+//#define PID_WND_SIZE			   TIMER_TEMP_MEASURE * 6
 #define TIMER_SAVE_STATE           30000
 #define SERIAL_BAUD_RATE           57600
 

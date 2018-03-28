@@ -72,19 +72,25 @@ class PIDControler : HeatControler
       mTuningOn = false;
 #endif
       HeatControler::init();
-      mPid.SetSampleTime(mSettings.getPidSampleTime());
+      mPid.SetSampleTime(PID_WND_SIZE);
       mPid.SetTunings(
         mSettings.getBrewStepKp(mActSettingsNr),
         mSettings.getBrewStepKi(mActSettingsNr),
         mSettings.getBrewStepKd(mActSettingsNr));
-      mPid.SetOutputLimits(0.0, mSettings.getPidWindowSize());
-      mPid.SetMode(AUTOMATIC);
+      mPid.SetOutputLimits(	mSettings.getPidDelta(),
+                            mSettings.getPidWindowSize());
 #ifdef AUTO_TUNE
       mTune.SetControlType(1);
       mTune.SetNoiseBand(mSettings.getTuneNoise());
       mTune.SetOutputStep(mSettings.getTuneStep());
       mTune.SetLookbackSec((int)mSettings.getTuneLookBack());
 #endif
+      resetPid();
+    }
+    void resetPid() {
+      mPid.SetMode(MANUAL);
+      mOutput = 0;
+      mPid.SetMode(AUTOMATIC);
       mPwmWindowStartTime = millis();
     }
     double getOutput()
@@ -119,23 +125,14 @@ class PIDControler : HeatControler
       if ( !mTuningOn )
 #endif
       {
-        if ( (mSetPoint - mInput) < mSettings.getPidDelta() )
+        if ( diff > mSettings.getPidWindowSize() )
         {
+          mPwmWindowStartTime = now;
           mPid.Compute();
         }
-        else
-        {
-          mOutput = mSettings.getPidWindowSize();
-        }
       }
 
-      if ( diff > mSettings.getPidWindowSize() )
-      {
-        mPwmWindowStartTime += mSettings.getPidWindowSize();
-        diff = 0;
-      }
-
-      if ( mOutput >= diff )
+      if ( mOutput >= diff && mOutput > mSettings.getPidDelta() )
         mHeatingOn = heatingStateChange(true);
       else
         mHeatingOn = heatingStateChange(false);
@@ -180,20 +177,20 @@ class HystereseControler : HeatControler
       else
         return false;
     }
-	boolean isCoolDown(float startTemp) {
-		if ( startTemp >
-		     mSettings.getBrewStepSollTemp(mActSettingsNr) +
-             mSettings.getMaxOverHeat() ) {
-			 return true;
-		}
-		return false;
-	}
+    boolean isCoolDown(float startTemp) {
+      if ( startTemp >
+           mSettings.getBrewStepSollTemp(mActSettingsNr) +
+           mSettings.getMaxOverHeat() ) {
+        return true;
+      }
+      return false;
+    }
     boolean isOverHeating(float actTemp, float startTemp) {
       if (  actTemp >
             mSettings.getBrewStepSollTemp(mActSettingsNr) +
             mSettings.getMaxOverHeat() &&
             0 != mSettings.getMaxOverHeat() &&
-			!isCoolDown(startTemp) &&
+            !isCoolDown(startTemp) &&
             !isCooling() ) {
         return true;
       }
