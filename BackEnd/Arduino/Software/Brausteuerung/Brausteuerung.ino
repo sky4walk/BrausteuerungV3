@@ -25,7 +25,7 @@
 
 #ifdef INOUT_USB
 #else
-	//#define FW_LINVOR
+	#define FW_LINVOR
 #endif
 
 #ifdef SWITCH_TEST
