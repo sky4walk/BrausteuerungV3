@@ -7,6 +7,7 @@
 #define MAXVOLT 5.0f
 #define SPANNUNGSTEILER_R1_UP 150
 #define SPANNUNGSTEILER_R2_DOWN 47
+#define DIODE 0.25f
 ///////////////////////////////////////////////////////////////////////////////
 // Bat Low
 ///////////////////////////////////////////////////////////////////////////////
@@ -41,7 +42,7 @@ class BatLow
     float getVoltage()
     {
       int val = analogRead(mPin);
-      return (float)val * ( 
+      return DIODE + (float)val * ( 
         MAXVOLT *
         ( SPANNUNGSTEILER_R1_UP + SPANNUNGSTEILER_R2_DOWN) /
         SPANNUNGSTEILER_R2_DOWN / 
