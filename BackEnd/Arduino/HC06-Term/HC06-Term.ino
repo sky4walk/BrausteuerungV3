@@ -1,7 +1,7 @@
 // brausteuerung@AndreBetz.de
 #include <SoftwareSerial.h>
 #define HC06_BAUD 9600
-#define HC06V3
+//#define HC06V3
 // Programm HC-06
 // load programm to Arduino
 // no bluetooth connection to HC-06 Module
@@ -35,8 +35,12 @@ void loop()
 {
   if ( setBaudOnce ) {
     #ifdef HC06V3
+      mySerial.println("AT+NAME=mikroSikaru.de\r\n");
+      delay(1500);
       mySerial.println("AT+UART=57600,0,0");
     #else
+      mySerial.print("AT+NAMEmikroSikaru.de");
+      delay(1500);
       mySerial.print("AT+BAUD7");
     #endif
     delay(1000);

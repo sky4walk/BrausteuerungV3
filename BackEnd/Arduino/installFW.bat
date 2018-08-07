@@ -4,6 +4,14 @@ REM erhaltenen COM Port anstatt COM7 eintragen
 
 SET AVRPATH=avrdude
 SET COMPORT=COM3
+
+REM install Bluetooth
+%AVRPATH%\avrdude.exe -C%AVRPATH%\avrdude.conf -v -patmega328p -carduino -P%COMPORT% -b57600 -D -Uflash:w:HC06-Term\HC06-Term.cpp.hex:i 
+REM %AVRPATH%\avrdude.exe -C%AVRPATH%\avrdude.conf -v -patmega328p -carduino -P%COMPORT% -b57600 -D -Uflash:w:HC06-Term\HC06-TermV3.cpp.hex:i 
+
+timeout 10
+
+REM install Firmware
 %AVRPATH%\avrdude.exe -C%AVRPATH%\avrdude.conf -v -patmega328p -carduino -P%COMPORT% -b57600 -D -Uflash:w:Software\bin\Brausteuerung_301803.hex:i 
 REM %AVRPATH%\avrdude.exe -C%AVRPATH%\avrdude.conf -v -patmega328p -carduino -P%COMPORT% -b57600 -D -Uflash:w:Software\bin\Brausteuerung_301709.hex:i 
 REM %AVRPATH%\avrdude.exe -C%AVRPATH%\avrdude.conf -v -patmega328p -carduino -P%COMPORT% -b57600 -D -Uflash:w:Software\bin\Brausteuerung_301709V3.hex:i 
