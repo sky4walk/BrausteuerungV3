@@ -1,6 +1,7 @@
 // brausteuerung@AndreBetz.de
 #include <SoftwareSerial.h>
 #define HC06_BAUD 9600
+//#define TERMINAL
 //#define HC06V3
 // Programm HC-06
 // load programm to Arduino
@@ -24,8 +25,22 @@
 SoftwareSerial mySerial(10, 11);
 boolean setBaudOnce = true;
 
-void setup() {
+boolean needCLRF() {
+  while ( mySerial.available() ) {
+    char a = mySerial.read();
+  }
+  mySerial.print("AT");
+  delay(1000);
+  if ( mySerial.available() ) {
+    while ( mySerial.available() ) {
+      char a = mySerial.read();
+    }
+    return false;
+  }
+  return true;
+}
 
+void setup() {
   Serial.begin(9600);
   delay(500);
   mySerial.begin(HC06_BAUD);
@@ -33,19 +48,24 @@ void setup() {
 }
 void loop()
 {
+  #ifndef TERMINAL
   if ( setBaudOnce ) {
-    #ifdef HC06V3
+    if ( needCLRF() ) {
+      Serial.println("new FW");
       mySerial.println("AT+NAME=mikroSikaru.de\r\n");
       delay(1500);
-      mySerial.println("AT+UART=57600,0,0");
-    #else
+      mySerial.println("AT+UART=57600,0,0");      
+    } else {
+      Serial.println("old FW");
       mySerial.print("AT+NAMEmikroSikaru.de");
       delay(1500);
-      mySerial.print("AT+BAUD7");
-    #endif
+      mySerial.print("AT+BAUD7");      
+    }
     delay(1000);
     setBaudOnce = false;
+    Serial.println("set OK");
   }
+  #else
   if ( Serial.available() )
   {
     char a = Serial.read();
@@ -56,4 +76,5 @@ void loop()
     char a = mySerial.read();
     Serial.print(a);
   }
+  #endif
 }
