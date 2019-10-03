@@ -93,6 +93,21 @@ class InOutPutBTHC06Linvor : InOutPut
       mSettings(settings)
     {
     }
+	boolean needCLRF() {
+		while ( mySerial.available() ) {
+			char a = mySerial.read();
+		}
+		mySerial.print("AT");
+		delay(1000);
+		if ( mySerial.available() ) {
+			while ( mySerial.available() ) {
+				char a = mySerial.read();
+			}
+			return false;
+		}
+		return true;
+	}
+	
     void init()
     {
       mySerial.begin(mBaud);
