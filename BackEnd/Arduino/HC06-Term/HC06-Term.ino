@@ -37,6 +37,7 @@ boolean needCLRF() {
     }
     return false;
   }
+  mySerial.println("\r\n");
   return true;
 }
 

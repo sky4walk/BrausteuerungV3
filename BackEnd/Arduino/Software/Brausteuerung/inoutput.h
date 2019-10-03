@@ -105,6 +105,7 @@ class InOutPutBTHC06Linvor : InOutPut
 			}
 			return false;
 		}
+		mySerial.println("\r\n");
 		return true;
 	}
 	
