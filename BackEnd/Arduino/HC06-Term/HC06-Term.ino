@@ -1,6 +1,7 @@
 // brausteuerung@AndreBetz.de
 #include <SoftwareSerial.h>
 #define HC06_BAUD 9600
+//#define HC06_BAUD 57600
 //#define TERMINAL
 //#define HC06V3
 // Programm HC-06
@@ -55,12 +56,16 @@ void loop()
       Serial.println("new FW");
       mySerial.println("AT+NAME=mikroSikaru.de\r\n");
       delay(1500);
+      mySerial.println("AT+PSWD=\"1101\"\r\n");
+      delay(1500);
       mySerial.println("AT+UART=57600,0,0");      
     } else {
       Serial.println("old FW");
-      mySerial.print("AT+NAMEmikroSikaru.de");
+      mySerial.print("AT+NAMEmikroSikaru.de");      
       delay(1500);
-      mySerial.print("AT+BAUD7");      
+      mySerial.print("AT+PIN1101");
+      delay(1500);
+      mySerial.print("AT+BAUD7");
     }
     delay(1000);
     setBaudOnce = false;
