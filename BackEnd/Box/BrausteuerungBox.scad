@@ -1,16 +1,16 @@
 platineX    = 61;
-platineY    = 61;
+platineY    = 65;
 bauteilZ    = 25;
 batteryX    = 30;
 batteryY    = 40;
 batteryZ    = 20;
-wand        = 1.5;
-bohrlochD   = 1.5;
+wand        = 1.8;
+bohrlochD   = 2;
 TempKabelD  = 8;
 SchalterD   = 6;
-LedD        = 2;
+LedD        = 3;
 StromD      = 2;
-StromHole   = 2;
+StromHole   = 4;
 
 $fn = 100; 
 module bohrHalterung(bohrungD,h)
@@ -68,15 +68,15 @@ module doppelschachtel(hoeheS)
 difference()
 {
     doppelschachtel(bauteilZ);
-    translate([-1,platineY/2,bauteilZ/2])
+    translate([-1,platineY*2/3,bauteilZ*2/3])
         rotate([0,90,0])
             cylinder(r=TempKabelD/2,wand+2);
-    translate([platineX/2,2,bauteilZ/2]) rotate([90,0,0]) cylinder(r=SchalterD/2,wand+2);
-    translate([platineX/2+SchalterD*2,2,bauteilZ/2]) rotate([90,0,0]) cylinder(r=LedD/2,wand+2);
+    translate([platineX/2,2,bauteilZ*2/3]) rotate([90,0,0]) cylinder(r=SchalterD/2,wand+2);
+    translate([platineX/2+SchalterD*2,2,bauteilZ*2/3]) rotate([90,0,0]) cylinder(r=LedD/2,wand+2);
     translate([platineX+batteryX/2+wand,2,bauteilZ/2]) rotate([90,0,0]) cylinder(r=LedD/2,wand+2);
-    translate([platineX+1,platineY/2,bauteilZ]) 
+    translate([platineX+1,wand,bauteilZ]) 
         cube(size = [wand+2,StromHole,StromHole], center = false);
-    translate([platineX+wand+batteryX/2,-1,bauteilZ]) 
+    translate([platineX+wand+batteryX-StromHole,-1,bauteilZ]) 
         cube(size = [StromHole,wand+2,StromHole], center = false);
 }
 translate([0,platineY+bohrlochD*6,0])
