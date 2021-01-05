@@ -51,7 +51,7 @@
 ///////////////////////////////////////////////////////////////////////////////
 // defines
 ///////////////////////////////////////////////////////////////////////////////
-#define VERSION                    301803
+#define VERSION                    302103
 #define TEMP_MEASURE_RESOLUTION    12
 #define TIMER_TEMP_MEASURE		   4000
 #define PID_WND_SIZE			   TIMER_TEMP_MEASURE

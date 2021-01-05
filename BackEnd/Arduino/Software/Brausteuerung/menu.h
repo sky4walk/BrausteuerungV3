@@ -60,6 +60,7 @@ class Menu
       mRecipeEditNr = 0;
       mBuzzer.off();
       mBrewing.resetBrew();
+      mBrewing.initGradientTemp();
     }
     void showMenu()
     {

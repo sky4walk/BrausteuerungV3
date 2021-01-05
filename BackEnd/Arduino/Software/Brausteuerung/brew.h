@@ -62,6 +62,12 @@ class Brew
     void init()
     {
       resetBrew();
+      initGradientTemp();
+    }
+    void initGradientTemp()
+    {
+      mActTemp = mSensor.getTemperatur();
+      mSensor.resetStored(mActTemp);
     }
     void resetBrew()
     {
@@ -70,9 +76,7 @@ class Brew
       mSwitchOnOff = false;
       ((Switcher&)mSwitcher).off();
       mActSettingsNr = 0;
-      mTimerBrew.init();
-      mActTemp = mSensor.getTemperatur();
-      mSensor.resetStored(mActTemp);
+      mTimerBrew.init();      
       mTimerCnt = TIMER_MULTIPLEX;
       mAlarmType = ALARM_NO;
       mGradientCycleCnt = 0;

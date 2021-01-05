@@ -1,5 +1,5 @@
 echo off
-SET AVR_PATH=C:\andre\portableApps\arduino-1.6.11\
+SET AVR_PATH=C:\Users\andre\portableApps\arduino-1.8.1\
 REM SET AVR_PATH=C:\andre\portableApps\arduino-1.6.9\
 REM SET PROFI_COOK=""
 
