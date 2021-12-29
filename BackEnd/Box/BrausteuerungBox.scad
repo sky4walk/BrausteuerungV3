@@ -10,7 +10,7 @@ bohrlochH   = 3;
 TempKabelD  = 8;
 SchalterD   = 6;
 LedD        = 3;
-StromCon    = 4;
+StromCon    = 8;
 StromD      = 2;
 StromHole   = 4;
 
