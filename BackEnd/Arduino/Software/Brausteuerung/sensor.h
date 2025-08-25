@@ -9,6 +9,7 @@
 #define MAXANALOGREAD 1023
 #define NTC_WAIT_TIME 10
 #define NTC_AKKU_VAL  5
+#define ERROR_VAL -126
 
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -32,6 +33,8 @@ class TemperaturSensor
         mStored[i] = val;
     }
     void addVal(float val) {
+      if ( ERROR_VAL > val )
+        val = mStored[mGradientPos];
       mStored[mGradientPos] = val;
       mGradientPos++;
       if ( MAXVALUES <= mGradientPos )
@@ -88,6 +91,9 @@ class TemperaturSensorDS18B20 :
     //    | | |
     //    1 2 3
     // 4.7KOhm zwischen PIN 2 und PIN 3
+    // verbesserungen bei fehler
+    // Draht 1 und 2 verdrillen
+    // kleiner kondensator zwischen 1 und 3 nahe am sensor
   public:
     TemperaturSensorDS18B20(
       byte pin,
@@ -113,7 +119,7 @@ class TemperaturSensorDS18B20 :
     {
       float val = mSensor.getTempCByIndex(0);
       mSensor.requestTemperatures();
-      if ( -126 > val ) {
+      if ( ERROR_VAL > val ) {
         setup();
       }
       //      mSensor.requestTemperaturesByAddress(mThermoNr);

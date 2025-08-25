@@ -11,4 +11,4 @@ REM install Bluetooth
 timeout 10
 
 REM install Firmware
-%AVRPATH%\avrdude.exe -C%AVRPATH%\avrdude.conf -v -patmega328p -carduino -P%COMPORT% -b57600 -D -Uflash:w:Software\bin\Brausteuerung_301803.hex:i 
+%AVRPATH%\avrdude.exe -C%AVRPATH%\avrdude.conf -v -patmega328p -carduino -P%COMPORT% -b57600 -D -Uflash:w:Software\bin\Brausteuerung_301804.hex:i 
