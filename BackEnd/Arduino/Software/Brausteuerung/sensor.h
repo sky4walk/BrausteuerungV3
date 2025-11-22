@@ -33,8 +33,6 @@ class TemperaturSensor
         mStored[i] = val;
     }
     void addVal(float val) {
-      if ( ERROR_VAL > val )
-        val = mStored[mGradientPos];
       mStored[mGradientPos] = val;
       mGradientPos++;
       if ( MAXVALUES <= mGradientPos )
@@ -109,9 +107,10 @@ class TemperaturSensorDS18B20 :
       pinMode(mPin, INPUT);
       setup();
     }
+    #define TMPRES 10
     void setup() {
       mSensor.begin();
-      mSensor.setResolution(11);
+      mSensor.setResolution(TMPRES);
       mSensor.setWaitForConversion(false);
       mSensor.requestTemperatures();
     }
@@ -120,7 +119,10 @@ class TemperaturSensorDS18B20 :
       float val = mSensor.getTempCByIndex(0);
       mSensor.requestTemperatures();
       if ( ERROR_VAL > val ) {
+        val = lastVal;
         setup();
+      } else {
+        lastVal = val;
       }
       //      mSensor.requestTemperaturesByAddress(mThermoNr);
       return val * mSettings.getKalM() + mSettings.getKalT();
@@ -155,6 +157,7 @@ class TemperaturSensorDS18B20 :
     */
 
     DallasTemperature& mSensor;
+    float lastVal;
     //    DeviceAddress mThermoNr;
 };
 ///////////////////////////////////////////////////////////////////////////////
