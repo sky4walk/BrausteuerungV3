@@ -107,10 +107,9 @@ class TemperaturSensorDS18B20 :
       pinMode(mPin, INPUT);
       setup();
     }
-    #define TMPRES 10
     void setup() {
       mSensor.begin();
-      mSensor.setResolution(TMPRES);
+      mSensor.setResolution(TEMP_MEASURE_RESOLUTION);
       mSensor.setWaitForConversion(false);
       mSensor.requestTemperatures();
     }
@@ -122,7 +121,7 @@ class TemperaturSensorDS18B20 :
         val = lastVal;
         setup();
       } else {
-        lastVal = val;
+        //lastVal = val;
       }
       //      mSensor.requestTemperaturesByAddress(mThermoNr);
       return val * mSettings.getKalM() + mSettings.getKalT();
@@ -267,4 +266,3 @@ class TemperaturSensorProfiCook :
 #endif
 
 #endif
-

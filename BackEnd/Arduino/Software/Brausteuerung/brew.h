@@ -172,7 +172,7 @@ class Brew
           mActTemp = mSensor.getTemperatur();
 
           // Temperatursensor hat eine Fehler
-          if ( mActTemp < -120 ) {
+          if ( mActTemp < -125 ) {
             mAlarmType = ALARM_TMPERR;
           } else {
             mAlarmType = ALARM_NO;
@@ -308,4 +308,3 @@ class Brew
 };
 
 #endif
-

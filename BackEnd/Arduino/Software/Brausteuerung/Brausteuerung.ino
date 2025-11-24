@@ -7,7 +7,7 @@
 //#define INOUT_USB
 //#define PROFI_COOK
 //#define AUTO_TUNE
-#define PID_REG
+//#define PID_REG
 
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -52,10 +52,10 @@
 // defines
 ///////////////////////////////////////////////////////////////////////////////
 #define VERSION                    302104
-#define TEMP_MEASURE_RESOLUTION    12
-#define TIMER_TEMP_MEASURE		   4000
+#define TEMP_MEASURE_RESOLUTION    11
 #define PID_WND_SIZE			   TIMER_TEMP_MEASURE
-//#define TIMER_TEMP_MEASURE 	   (800 / (1 << (12 - TEMP_MEASURE_RESOLUTION))) 
+#define TIMER_TEMP_MEASURE       4000
+//#define TIMER_TEMP_MEASURE 	   (750 / (1 << (12 - TEMP_MEASURE_RESOLUTION))) 
 //#define PID_WND_SIZE			   TIMER_TEMP_MEASURE * 6
 #define TIMER_SAVE_STATE           30000
 #define SERIAL_BAUD_RATE           57600
@@ -220,4 +220,3 @@ void loop()
 #endif
 }
 ///////////////////////////////////////////////////////////////////////////////
-
