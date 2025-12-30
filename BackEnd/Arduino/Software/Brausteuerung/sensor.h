@@ -23,6 +23,7 @@ class TemperaturSensor
       SystemSettings& settings) :
       mPin(pin),
       mGradientPos(0),
+      mError(false),
       mSettings(settings)
     {
       mType = 0;
@@ -65,12 +66,16 @@ class TemperaturSensor
     byte getActGradPos() {
       return mGradientPos;
     }
+    boolean getError(){
+      return mError;
+    }
   protected:
     byte mPin;
     SystemSettings& mSettings;
     byte mType;
     byte mGradientPos;
     float mStored[MAXVALUES];
+    boolean mError;
 };
 ///////////////////////////////////////////////////////////////////////////////
 class TemperaturSensorDS18B20 :
@@ -116,12 +121,25 @@ class TemperaturSensorDS18B20 :
     float getTemperatur()
     {
       float val = mSensor.getTempCByIndex(0);
-      mSensor.requestTemperatures();
-      if ( ERROR_VAL > val ) {
-        val = lastVal;
-        setup();
-      } else {
-        //lastVal = val;
+      if ( ERROR_VAL >= val ) {
+        delay(100);
+        val = mSensor.getTempCByIndex(0);
+        if ( ERROR_VAL >= val ) {
+          delay(100);
+          val = mSensor.getTempCByIndex(0);
+          if ( ERROR_VAL >= val ) {      
+            val = lastVal;
+            mError = true;
+            setup();
+          }
+        }
+      }
+      
+      if ( false == mError ) {
+        delay(100);
+        mSensor.requestTemperatures();
+        mError = false;
+        lastVal = val;
       }
       //      mSensor.requestTemperaturesByAddress(mThermoNr);
       return val * mSettings.getKalM() + mSettings.getKalT();

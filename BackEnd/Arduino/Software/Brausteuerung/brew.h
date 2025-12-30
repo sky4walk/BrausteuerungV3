@@ -172,12 +172,12 @@ class Brew
           mActTemp = mSensor.getTemperatur();
 
           // Temperatursensor hat eine Fehler
-          if ( mActTemp < -125 ) {
+          if ( mSensor.getError() ) {
             mAlarmType = ALARM_TMPERR;
           } else {
             mAlarmType = ALARM_NO;
+            mSensor.addVal(mActTemp);
           }
-          mSensor.addVal(mActTemp);
 
 #ifdef UEBERHITZUNGSSCHUTZ
           // Temperaturueberwachung falls geheizt wird
@@ -224,7 +224,7 @@ class Brew
             mAlarmType = ALARM_OVERHEAT;
           }
 
-          if ( mSwitchOnOff && on && (ALARM_NO == mAlarmType) ) {
+          if ( mSwitchOnOff && on && (ALARM_NO == mAlarmType || ALARM_TMPERR == mAlarmType ) ) {
             ((Switcher&)mSwitcher).on();
           } else {
             ((Switcher&)mSwitcher).off();
