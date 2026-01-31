@@ -120,8 +120,9 @@ class TemperaturSensorDS18B20 :
     }
     float getTemperatur()
     {
+      boolean err = false;
       float val = mSensor.getTempCByIndex(0);
-      if ( ERROR_VAL >= val ) {
+      if ( ERROR_VAL >= val ) {        
         delay(100);
         val = mSensor.getTempCByIndex(0);
         if ( ERROR_VAL >= val ) {
@@ -129,17 +130,19 @@ class TemperaturSensorDS18B20 :
           val = mSensor.getTempCByIndex(0);
           if ( ERROR_VAL >= val ) {      
             val = lastVal;
-            mError = true;
+            err = true;
             setup();
           }
         }
       }
       
-      if ( false == mError ) {
+      if ( false == err ) {
         delay(100);
         mSensor.requestTemperatures();
-        mError = false;
         lastVal = val;
+        mError = false;
+      } else {
+        mError = true;        
       }
       //      mSensor.requestTemperaturesByAddress(mThermoNr);
       return val * mSettings.getKalM() + mSettings.getKalT();
